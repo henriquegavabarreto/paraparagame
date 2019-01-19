@@ -1,5 +1,14 @@
 import * as PIXI from 'pixi.js'
 
+var playIfButtonPressed = require('./test.js')
+
+const YTPlayer = require('yt-player')
+const player = new YTPlayer('#player')
+
+player.load('lGqKYpvLkhE')
+
+playIfButtonPressed(player)
+
 const pixiConfig = {
   transparent: true,
   autoResize: true,
@@ -10,7 +19,9 @@ const pixiConfig = {
 
 const app = new PIXI.Application(pixiConfig)
 
-document.body.appendChild(app.view)
+document.getElementById("canvas").appendChild(app.view)
 
-let text = new PIXI.Text('Hello',{fill: 0xAAFF00})
+var graphics = new PIXI.Graphics()
+
+let text = new PIXI.Text('Hello',{fill: 0xFAAFFF})
 app.stage.addChild(text)
