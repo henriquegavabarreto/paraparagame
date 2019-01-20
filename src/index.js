@@ -1,13 +1,15 @@
 import * as PIXI from 'pixi.js'
 
-var playIfButtonPressed = require('./test.js')
+var showTimingOptions = require('./listeners/show-timing-modal.js')
+
+var playIfSpacePressed = require('./test.js')
 
 const YTPlayer = require('yt-player')
 const player = new YTPlayer('#player')
 
 player.load('lGqKYpvLkhE')
 
-playIfButtonPressed(player)
+playIfSpacePressed(player)
 
 const pixiConfig = {
   transparent: true,

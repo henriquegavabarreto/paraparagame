@@ -8,6 +8,38 @@
   <link rel="stylesheet" href="src/css/style.css">
 </head>
 <body>
+  <nav class="top-nav">
+    <button class="top-button" id="editor-button">Editor Mode</button>
+    <button class="top-button" id="timing-button">Timing</button>
+    <div class="timing-modal" id="timing-modal">
+      <div class="timing-content" id="timing-content">
+        <form>
+        <label for="start">Video Starting Point: </label><input type="text" id="startingPoint"></input>
+        <br>
+        <label for="end">Video Ending Point: </label><input type="text" id="endingPoint"></input>
+        <br>
+        <label for="offset">Video Offset: </label><input type="text" id="offset">
+        <br>
+        <label for="bpm">Song BPM: </label><input type="text" id="bpm">
+        <br>
+        <button type="button" id="timing-submitter">Save</button>
+        <br>
+      </div>
+    </div>
+    <button class="top-button" id="song-info-button">Song Info</button>
+  </nav>
+  <nav class="options-nav">
+    <button class="top-button" id="options-button">Editor Options</button>
+  </nav>
+  <nav class="side-nav">
+
+  </nav>
+  <nav class="bottom-nav">
+    <button class="bottom-button" id="play-pause">Play/Pause</button>
+    <button class="bottom-button" id="slower">-</button>
+     Playback Rate
+    <button class="bottom-button" id="faster">+</button>
+  </nav>
   <div id="canvas"></div>
   <div id="player"></div>
   <script src="dist/main.js" charset="utf-8"></script>

@@ -1,7 +1,13 @@
-function playIfButtonPressed (player) {
-  window.addEventListener('keydown', function () {
-    player.play()
+function playIfSpacePressed (player) {
+  window.addEventListener('keydown', function (event) {
+    if ( event.code === 'Space' ) {
+      if ( player.getState() === 'playing' ) {
+        player.pause()
+      } else {
+        player.play()
+      }
+    }
   })
 }
 
-module.exports = playIfButtonPressed
+module.exports = playIfSpacePressed
