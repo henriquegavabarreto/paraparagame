@@ -1,6 +1,6 @@
 var danceChart = require('../../data/dance-chart.js')
-
 var player = require('../config/youtube.js')
+var editor = require('../config/editor.js')
 
 var saveSongButton = document.getElementById('song-submitter')
 var songModal = document.getElementById('song-modal')
@@ -27,6 +27,8 @@ function validateSong (titleInput, artistInput, videoIdInput) {
     document.getElementById('invalid-song-warning').style.display = 'none'
 
     songModal.classList.toggle("show-song-options")
+
+    editor.status = true
   } else {
     document.getElementById('invalid-song-warning').style.display = 'block'
   }

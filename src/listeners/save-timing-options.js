@@ -1,4 +1,5 @@
 var danceChart = require('../../data/dance-chart.js')
+var editor = require('../config/editor.js')
 
 var saveTimingButton = document.getElementById('timing-submitter')
 var timingModal = document.getElementById('timing-modal')
@@ -25,6 +26,8 @@ function validateTiming (startInput, endInput, offsetInput, bpmInput) {
     document.getElementById('invalid-timing-warning').style.display = 'none'
 
     timingModal.classList.toggle("show-timing-options")
+
+    editor.status = true
   }
 }
 

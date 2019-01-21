@@ -6,7 +6,7 @@ var saveTimingOptions = require('./listeners/save-timing-options.js')
 var showSongOptions = require('./listeners/show-song-modal.js')
 var saveSongOptions = require('./listeners/save-song-options.js')
 
-var playIfSpacePressed = require('./short-cuts/play.js')
+var playShortCut = require('./short-cuts/play.js')
 var adjustPlaybackRate = require('./short-cuts/playback-rate.js')
 
 var slowerButton = require('./listeners/playback-rate.js').slower

@@ -1,16 +1,25 @@
 var player = require('../config/youtube.js')
+var editor = require('../config/editor.js')
 
 function goSlower () {
-  let v = player.getPlaybackRate()
-  if ( v > 0.25 ) {
-    player.setPlaybackRate(v - 0.25)
+  if ( editor.status ) {
+    let v = player.getPlaybackRate()
+    if ( v > 0.25 ) {
+      v = v - 0.25
+      player.setPlaybackRate(v)
+      document.getElementById('playback-rate').innerHTML = `Playback Rate: ${v}`
+    }
   }
 }
 
 function goFaster () {
-  let v = player.getPlaybackRate()
-  if ( v < 2 ) {
-    player.setPlaybackRate(v + 0.25)
+  if ( editor.status ) {
+    let v = player.getPlaybackRate()
+    if ( v < 2 ) {
+      v = v + 0.25
+      player.setPlaybackRate(v)
+      document.getElementById('playback-rate').innerHTML = `Playback Rate: ${v}`
+    }
   }
 }
 

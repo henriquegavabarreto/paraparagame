@@ -1,10 +1,13 @@
 var player = require('../config/youtube.js')
+var editor = require('../config/editor.js')
 
 function playPause () {
-  if ( player.getState() === 'playing' ) {
-    player.pause()
-  } else {
-    player.play()
+  if ( editor.status ){
+    if ( player.getState() === 'playing' ) {
+      player.pause()
+    } else {
+      player.play()
+    }
   }
 }
 
