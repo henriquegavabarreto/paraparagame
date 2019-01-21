@@ -9,10 +9,12 @@
 </head>
 <body>
   <nav class="top-nav">
-    <button class="top-button" id="editor-button">Editor Mode</button>
-    <button class="top-button" id="timing-button">Timing</button>
+    <!-- Timing Button and Options -->
+    <button type="button" class="top-button" id="timing-button">Timing</button>
     <div class="timing-modal" id="timing-modal">
       <div class="timing-content" id="timing-content">
+        <h2>Timing Options</h2>
+        <p id="invalid-timing-warning">Invalid Input - All must be numbers</p>
         <form>
         <label for="start">Video Starting Point: </label><input type="text" id="startingPoint"></input>
         <br>
@@ -26,20 +28,36 @@
         <br>
       </div>
     </div>
-    <button class="top-button" id="song-info-button">Song Info</button>
-  </nav>
-  <nav class="options-nav">
-    <button class="top-button" id="options-button">Editor Options</button>
+    <!-- Song Info Button and Options -->
+    <button type="button" class="top-button" id="song-info-button">Song Info</button>
+    <div class="song-modal" id="song-modal">
+      <div class="song-content" id="song-content">
+        <h2>Song Options</h2>
+        <p id="invalid-song-warning">Invalid Video ID</p>
+        <form>
+        <label for="title">Song Title: </label><input type="text" id="song-title"></input>
+        <br>
+        <label for="artist">Artist: </label><input type="text" id="song-artist"></input>
+        <br>
+        <label for="videoId">Youtube Video ID: </label><input type="text" id="video-id">
+        <br>
+        <button type="button" id="song-submitter">Save</button>
+        <br>
+      </div>
+    </div>
+    <button type="button" class="top-button" id="editor-button">Editor Mode</button>
+    <button type="button" class="top-button" id="options-button">Options</button>
   </nav>
   <nav class="side-nav">
 
   </nav>
-  <nav class="fill-space-nav"></nav>
   <nav class="bottom-nav">
-    <button class="bottom-button" id="play-pause">Play/Pause</button>
-    <button class="bottom-button" id="slower">-</button>
-     Playback Rate
-    <button class="bottom-button" id="faster">+</button>
+    <button type="button" class="bottom-button" id="play-pause">Play/Pause</button>
+    <div class="playback">
+      <button type="button" class="bottom-button" id="slower">-</button>
+      <label for="playback-rate" id="playback-rate">Playback Rate</label>
+      <button type="button" class="bottom-button" id="faster">+</button>
+    </div>
   </nav>
   <div id="canvas"></div>
   <div id="player"></div>

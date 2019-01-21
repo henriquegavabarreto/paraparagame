@@ -1,15 +1,17 @@
 import * as PIXI from 'pixi.js'
 
 var showTimingOptions = require('./listeners/show-timing-modal.js')
+var saveTimingOptions = require('./listeners/save-timing-options.js')
 
-var playIfSpacePressed = require('./test.js')
+var showSongOptions = require('./listeners/show-song-modal.js')
+var saveSongOptions = require('./listeners/save-song-options.js')
 
-const YTPlayer = require('yt-player')
-const player = new YTPlayer('#player')
+var playIfSpacePressed = require('./short-cuts/play.js')
+var adjustPlaybackRate = require('./short-cuts/playback-rate.js')
 
-player.load('lGqKYpvLkhE')
-
-playIfSpacePressed(player)
+var slowerButton = require('./listeners/playback-rate.js').slower
+var fasterButton = require('./listeners/playback-rate.js').faster
+var playButton = require('./listeners/play.js')
 
 const pixiConfig = {
   transparent: true,
