@@ -3,7 +3,12 @@ var editorConfig = {
   shortCuts: {
     play: 'p',
     slower: ',',
-    faster: '.'
+    faster: '.',
+    nextBeat: 'ArrowUp',
+    previousBeat: 'ArrowDown'
+  },
+  adjustments: {
+    tempo: 1
   }
 }
 

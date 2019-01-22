@@ -2,10 +2,12 @@ var danceChart = require('../../data/dance-chart.js')
 var player = require('../config/youtube.js')
 var editor = require('../config/editor.js')
 
+import { drawGuideNumbers } from '../stage/guideNumbers/guide-numbers.js'
+
 var saveSongButton = document.getElementById('song-submitter')
 var songModal = document.getElementById('song-modal')
 
-function saveSongOptions () {
+function saveOptions () {
   var titleInput = document.getElementById('song-title').value
   var artistInput = document.getElementById('song-artist').value
   var videoIdInput = document.getElementById('video-id').value
@@ -14,10 +16,16 @@ function saveSongOptions () {
 }
 
 function validateSong (titleInput, artistInput, videoIdInput) {
-  if (videoIdInput !== "") {
+  if (videoIdInput.length === 11) { // This should check if the ID is valid on the API, though
 
     if (videoIdInput !== danceChart.info.video.videoId) {
       player.load(videoIdInput)
+      player.play()
+      setTimeout(function () {
+        drawGuideNumbers()
+        player.pause()
+      }, 3000)
+
     }
 
     danceChart.info.song.title = titleInput
@@ -29,9 +37,12 @@ function validateSong (titleInput, artistInput, videoIdInput) {
     songModal.classList.toggle("show-song-options")
 
     editor.status = true
+
   } else {
     document.getElementById('invalid-song-warning').style.display = 'block'
   }
 }
 
-module.exports = saveSongButton.addEventListener('click', saveSongOptions)
+const saveSongOptions = saveSongButton.addEventListener('click', saveOptions)
+
+export { saveSongOptions }

@@ -1,10 +1,18 @@
 import * as PIXI from 'pixi.js'
+import app from './config/pixi.js'
+import { chart, elements, circleSelection, guideNumbers } from './config/containers.js'
+import { setChart } from './stage/chart/chart.js'
+
+app.stage.addChild(chart)
+app.stage.addChild(elements)
+app.stage.addChild(circleSelection)
+app.stage.addChild(guideNumbers)
 
 var showTimingOptions = require('./listeners/show-timing-modal.js')
-var saveTimingOptions = require('./listeners/save-timing-options.js')
+import { saveTimingOptions } from './listeners/save-timing-options.js'
 
 var showSongOptions = require('./listeners/show-song-modal.js')
-var saveSongOptions = require('./listeners/save-song-options.js')
+import { saveSongOptions } from './listeners/save-song-options.js'
 
 var playShortCut = require('./short-cuts/play.js')
 var adjustPlaybackRate = require('./short-cuts/playback-rate.js')
@@ -13,19 +21,12 @@ var slowerButton = require('./listeners/playback-rate.js').slower
 var fasterButton = require('./listeners/playback-rate.js').faster
 var playButton = require('./listeners/play.js')
 
-const pixiConfig = {
-  transparent: true,
-  autoResize: true,
-  resolution: 2,
-  antialias: true,
-  clearBeforeRender: true
-}
+var beatSelect = require('./short-cuts/beat-select.js')
 
-const app = new PIXI.Application(pixiConfig)
+setChart()
 
-document.getElementById("canvas").appendChild(app.view)
+var onPaused = require('./listeners/on-pause.js')
 
-var graphics = new PIXI.Graphics()
-
-let text = new PIXI.Text('Hello',{fill: 0xFAAFFF})
-app.stage.addChild(text)
+// var graphics = new PIXI.Graphics()
+// let text = new PIXI.Text('Hello',{fill: 0xFAAFFF})
+// chart.addChild(text)

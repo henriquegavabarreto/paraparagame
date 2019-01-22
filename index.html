@@ -27,7 +27,7 @@
       </div>
     </div>
     <!-- Song Info Button and Options -->
-    <button type="button" class="top-button" id="song-info-button">Song Info</button>
+    <button type="button" class="top-button" id="song-options-button">Song Options</button>
     <div class="song-modal" id="song-modal">
       <div class="song-content" id="song-content">
         <h2>Song Options</h2>
@@ -41,11 +41,24 @@
         <button type="button" id="song-submitter">Save</button>
       </div>
     </div>
-    <button type="button" class="top-button" id="editor-button">Editor Mode</button>
-    <button type="button" class="top-button" id="options-button">Options</button>
+      <button type="button" class="top-button" id="menu-button">Menu</button>
   </nav>
   <nav class="side-nav">
-
+    <div class="ring-options">
+      <select name="selection" id="pointer-selection">
+        <option value="select">Select</option>
+        <option value="add">Add</option>
+      </select>
+      <select name="detection" id="movement-detection">
+        <option value="single">Single</option>
+        <option value="double">Double</option>
+      </select>
+      <select name="type" id="movement-type">
+        <option value="sharp">Sharp</option>
+        <option value="hold">Hold</option>
+        <option value="motion">Motion</option>
+      </select>
+    </div>
   </nav>
   <nav class="bottom-nav">
     <button type="button" class="bottom-button" id="play-pause">Play/Pause</button>

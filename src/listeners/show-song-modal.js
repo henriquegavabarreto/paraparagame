@@ -3,7 +3,7 @@ var editor = require('../config/editor.js')
 var player = require('../config/youtube.js')
 
 let songModal = document.getElementById('song-modal')
-let songButton = document.getElementById('song-info-button')
+let songButton = document.getElementById('song-options-button')
 
 function toggleModal() {
   if( player.getState() !== 'paused' ) {
