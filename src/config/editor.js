@@ -8,7 +8,7 @@ var editorConfig = {
     previousBeat: 'ArrowDown'
   },
   adjustments: {
-    tempo: 1
+    beatSelectorTempo: 4
   }
 }
 

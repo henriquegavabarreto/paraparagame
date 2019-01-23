@@ -17,11 +17,17 @@ function getCurrentQuarterBeat () {
 }
 
 function getNearestBeat () {
-  let nearestBeat = Math.floor((getCurrentQuarterBeat() * getTempo()) + song.offset) / 4
+  let nearestBeat = Math.floor(getCurrentQuarterBeat())
   return nearestBeat
+}
+
+function getNearestBeatTime () {
+  let nearestBeatTime = (( getNearestBeat() / 4 ) * getTempo()) + song.offset
+  return nearestBeatTime
 }
 
 exports.getTempo = getTempo
 exports.getCurrentBeat = getCurrentBeat
 exports.getCurrentQuarterBeat = getCurrentQuarterBeat
 exports.getNearestBeat = getNearestBeat
+exports.getNearestBeatTime = getNearestBeatTime

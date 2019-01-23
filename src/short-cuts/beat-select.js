@@ -5,9 +5,9 @@ var songManager = require('../config/song-manager.js')
 function beatSelect (event) {
   if ( editor.status && player.getState() === 'paused') {
     if ( event.key === editor.shortCuts.nextBeat ) {
-      player.seek(player.getCurrentTime() + ( songManager.getTempo() / editor.adjustments.tempo ))
+      player.seek(player.getCurrentTime() + ( songManager.getTempo() / editor.adjustments.beatSelectorTempo ))
     } else if ( event.key === editor.shortCuts.previousBeat ) {
-      player.seek(player.getCurrentTime() - ( songManager.getTempo() / editor.adjustments.tempo ))
+      player.seek(player.getCurrentTime() - ( songManager.getTempo() / editor.adjustments.beatSelectorTempo ))
     }
   }
 }
