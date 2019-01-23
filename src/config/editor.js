@@ -4,8 +4,10 @@ var editorConfig = {
     play: 'p',
     slower: ',',
     faster: '.',
-    nextBeat: 'ArrowUp',
-    previousBeat: 'ArrowDown'
+    nextQuarterBeat: 'ArrowUp',
+    previousQuarterBeat: 'ArrowDown',
+    nextBeat: 'ArrowRight',
+    previousBeat: 'ArrowLeft'
   },
   adjustments: {
     beatSelectorTempo: 4
