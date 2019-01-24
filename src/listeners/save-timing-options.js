@@ -28,10 +28,10 @@ function validateTiming (startInput, endInput, offsetInput, bpmInput) {
       shouldDrawNumbers = true
     }
 
-    danceChart.info.video.start = parseInt(startInput)
-    danceChart.info.video.end = parseInt(endInput)
-    danceChart.info.song.offset = parseInt(offsetInput)
-    danceChart.info.song.bpm = parseInt(bpmInput)
+    danceChart.info.video.start = parseFloat(startInput)
+    danceChart.info.video.end = parseFloat(endInput)
+    danceChart.info.song.offset = parseFloat(offsetInput)
+    danceChart.info.song.bpm = parseFloat(bpmInput)
 
     if ( shouldDrawNumbers ) drawGuideNumbers()
 

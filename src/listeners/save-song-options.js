@@ -2,6 +2,8 @@ var danceChart = require('../../data/dance-chart.js')
 var player = require('../config/youtube.js')
 var editor = require('../config/editor.js')
 
+import { startAnimation } from '../animations/animation-manager.js'
+
 import { drawGuideNumbers } from '../stage/guideNumbers/guide-numbers.js'
 
 var saveSongButton = document.getElementById('song-submitter')
@@ -24,6 +26,7 @@ function validateSong (titleInput, artistInput, videoIdInput) {
       setTimeout(function () {
         drawGuideNumbers()
         player.pause()
+        startAnimation()
       }, 3000)
 
     }

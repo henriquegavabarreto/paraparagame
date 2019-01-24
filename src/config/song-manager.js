@@ -17,13 +17,21 @@ function getCurrentQuarterBeat () {
 }
 
 function getNearestBeat () {
-  let nearestBeat = Math.floor(getCurrentQuarterBeat())
+  let nearestBeat = Math.round(getCurrentQuarterBeat())
   return nearestBeat
 }
 
-function getNearestBeatTime () {
-  let nearestBeatTime = (( getNearestBeat() / 4 ) * getTempo()) + song.offset
+function getNearestBeatTime (t = 0) {
+  let nearestBeatTime = (( (getNearestBeat() + t) / 4 ) * getTempo()) + song.offset
   return nearestBeatTime
+}
+
+function getLastBeatTime () {
+  for( let lastBeatTime = 0; lastBeatTime <= player.getDuration(); lastBeatTime += getTempo() ) {
+    if (lastBeatTime + getTempo() > player.getDuration()) {
+      return lastBeatTime
+    }
+  }
 }
 
 exports.getTempo = getTempo
@@ -31,3 +39,4 @@ exports.getCurrentBeat = getCurrentBeat
 exports.getCurrentQuarterBeat = getCurrentQuarterBeat
 exports.getNearestBeat = getNearestBeat
 exports.getNearestBeatTime = getNearestBeatTime
+exports.getLastBeatTime = getLastBeatTime

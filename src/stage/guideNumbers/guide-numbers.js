@@ -13,7 +13,8 @@ function drawGuideNumbers () {
   for( let i = videoStart; i <= videoEnd; i += songManager.getTempo() ) {
     let guideNumber = Math.round( ( i - song.offset ) / songManager.getTempo() )
 
-    if ( Math.abs(guideNumber % 4) === 0 ) {
+    if ( Math.abs(guideNumber % 4) === 0) {
+
       var text = new PIXI.Text( guideNumber, {
           fontSize: 12,
           fontFamily: 'Arial',
@@ -28,6 +29,7 @@ function drawGuideNumbers () {
       text.cacheAsBitmap = true
       guideNumbers.addChild(text)
     }
+
   }
 }
 

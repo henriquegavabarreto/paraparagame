@@ -21,12 +21,8 @@ var slowerButton = require('./listeners/playback-rate.js').slower
 var fasterButton = require('./listeners/playback-rate.js').faster
 var playButton = require('./listeners/play.js')
 
-var beatSelect = require('./short-cuts/beat-select.js')
+import { beatSelectors } from './short-cuts/beat-select.js'
 
 setChart()
 
 var onPaused = require('./listeners/on-pause.js')
-
-// var graphics = new PIXI.Graphics()
-// let text = new PIXI.Text('Hello',{fill: 0xFAAFFF})
-// chart.addChild(text)

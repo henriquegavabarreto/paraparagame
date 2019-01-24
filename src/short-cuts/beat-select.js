@@ -5,15 +5,17 @@ var songManager = require('../config/song-manager.js')
 function beatSelect (event) {
   if ( editor.status && player.getState() === 'paused') {
     if ( event.key === editor.shortCuts.nextQuarterBeat ) {
-      player.seek(player.getCurrentTime() + ( songManager.getTempo() / editor.adjustments.beatSelectorTempo ))
+      player.seek(songManager.getNearestBeatTime(1))
     } else if ( event.key === editor.shortCuts.previousQuarterBeat ) {
-      player.seek(player.getCurrentTime() - ( songManager.getTempo() / editor.adjustments.beatSelectorTempo ))
+      player.seek(songManager.getNearestBeatTime(-1))
     } else if ( event.key === editor.shortCuts.nextBeat ) {
-      player.seek(player.getCurrentTime() + ( songManager.getTempo() / ( editor.adjustments.beatSelectorTempo / 4 )))
+      player.seek(songManager.getNearestBeatTime(4))
     } else if ( event.key === editor.shortCuts.previousBeat ) {
-      player.seek(player.getCurrentTime() - ( songManager.getTempo() / ( editor.adjustments.beatSelectorTempo / 4 )))
+      player.seek(songManager.getNearestBeatTime(-4))
     }
   }
 }
 
-module.exports = window.addEventListener('keydown', beatSelect)
+var beatSelectors = window.addEventListener('keydown', beatSelect)
+
+export { beatSelectors }

@@ -4,8 +4,8 @@ var editorConfig = {
     play: 'p',
     slower: ',',
     faster: '.',
-    nextQuarterBeat: 'ArrowUp',
-    previousQuarterBeat: 'ArrowDown',
+    nextQuarterBeat: 'ArrowDown',
+    previousQuarterBeat: 'ArrowUp',
     nextBeat: 'ArrowRight',
     previousBeat: 'ArrowLeft'
   },
