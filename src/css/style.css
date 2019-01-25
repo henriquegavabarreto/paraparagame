@@ -105,6 +105,16 @@ body {
   z-index: 1;
 }
 
+.seek {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 10%;
+  width: 25%;
+  color: #FFFFFF;
+  z-index: 1;
+}
+
 /* Buttons */
 
 .top-button, .bottom-button {

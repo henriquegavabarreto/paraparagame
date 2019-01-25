@@ -23,6 +23,8 @@ var playButton = require('./listeners/play.js')
 
 import { beatSelectors } from './short-cuts/beat-select.js'
 
+var seekInput = require('./listeners/seek-input.js')
+
 setChart()
 
 var onPaused = require('./listeners/on-pause.js')

@@ -29,7 +29,6 @@ function drawGuideNumbers () {
       text.cacheAsBitmap = true
       guideNumbers.addChild(text)
     }
-
   }
 }
 
