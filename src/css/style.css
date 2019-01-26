@@ -167,7 +167,7 @@ body {
 
 /* Modals */
 
-.timing-modal, .song-modal {
+.timing-modal, .song-modal, .menu-modal {
   position: fixed;
   left: 0;
   top: 0;
@@ -180,7 +180,7 @@ body {
   transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
 }
 
-.timing-content, .song-content {
+.timing-content, .song-content, .menu-content {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -194,7 +194,7 @@ body {
   border-radius: 0.5rem;
 }
 
-.show-timing-options, .show-song-options {
+.show-timing-options, .show-song-options, .show-menu-options {
   opacity: 1;
   visibility: visible;
   transform: scale(1.0);

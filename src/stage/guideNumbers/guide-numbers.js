@@ -3,6 +3,7 @@ import { guideNumbers } from '../../config/containers.js'
 var player = require('../../config/youtube.js')
 var song = require('../../../data/dance-chart.js').info.song
 var songManager = require('../../config/song-manager.js')
+var editor = require('../../config/editor.js')
 
 function drawGuideNumbers () {
   guideNumbers.removeChildren()
@@ -13,7 +14,7 @@ function drawGuideNumbers () {
   for( let i = videoStart; i <= videoEnd; i += songManager.getTempo() ) {
     let guideNumber = Math.round( ( i - song.offset ) / songManager.getTempo() )
 
-    if ( Math.abs(guideNumber % 4) === 0) {
+    if ( Math.abs(guideNumber % editor.adjustments.numbers) === 0) {
 
       var text = new PIXI.Text( guideNumber, {
           fontSize: 12,

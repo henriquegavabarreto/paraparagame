@@ -10,7 +10,7 @@ var editorConfig = {
     previousBeat: 'ArrowLeft'
   },
   adjustments: {
-    beatSelectorTempo: 4
+    numbers: 4
   }
 }
 
