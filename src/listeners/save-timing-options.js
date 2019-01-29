@@ -2,7 +2,7 @@ var danceChart = require('../../data/dance-chart.js')
 var editor = require('../config/editor.js')
 var player = require('../config/youtube.js')
 
-import { drawGuideNumbers } from '../stage/guideNumbers/guide-numbers.js'
+import { drawGuideNumbers } from '../stage/guideNumbers/draw-guide-numbers.js'
 
 var saveTimingButton = document.getElementById('timing-submitter')
 var timingModal = document.getElementById('timing-modal')

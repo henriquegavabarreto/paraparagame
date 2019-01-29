@@ -11,10 +11,6 @@ function toggleModal() {
   }
 
   menuModal.classList.toggle("show-menu-options")
-  // document.getElementById('startingPoint').value = danceChart.info.video.start
-  // document.getElementById('endingPoint').value = danceChart.info.video.end
-  // document.getElementById('offset').value = danceChart.info.song.offset
-  // document.getElementById('bpm').value = danceChart.info.song.bpm
 
   editor.status = false
 }

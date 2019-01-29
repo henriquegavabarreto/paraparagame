@@ -4,7 +4,7 @@ var editor = require('../config/editor.js')
 
 import { startAnimation } from '../animations/animation-manager.js'
 
-import { drawGuideNumbers } from '../stage/guideNumbers/guide-numbers.js'
+import { drawGuideNumbers } from '../stage/guideNumbers/draw-guide-numbers.js'
 
 var saveSongButton = document.getElementById('song-submitter')
 var songModal = document.getElementById('song-modal')

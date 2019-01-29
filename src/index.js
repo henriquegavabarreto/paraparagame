@@ -15,6 +15,7 @@ var showSongOptions = require('./listeners/show-song-modal.js')
 import { saveSongOptions } from './listeners/save-song-options.js'
 
 var showMenuOptions = require('./listeners/show-menu-modal.js')
+import { saveMenuOptions } from './listeners/save-menu-options.js'
 
 var playShortCut = require('./short-cuts/play.js')
 var adjustPlaybackRate = require('./short-cuts/playback-rate.js')
