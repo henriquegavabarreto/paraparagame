@@ -26,6 +26,8 @@ var playButton = require('./listeners/play.js')
 
 import { beatSelectors } from './short-cuts/beat-select.js'
 
+import { noteCreator } from './short-cuts/beat-creator.js'
+
 var seekInput = require('./listeners/seek-input.js')
 
 setChart()

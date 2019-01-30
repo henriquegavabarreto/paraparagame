@@ -7,7 +7,9 @@ var editorConfig = {
     nextQuarterBeat: 'ArrowDown',
     previousQuarterBeat: 'ArrowUp',
     nextBeat: 'ArrowRight',
-    previousBeat: 'ArrowLeft'
+    previousBeat: 'ArrowLeft',
+    leftHand: 'z',
+    rightHand: 'x'
   },
   adjustments: {
     numbers: 4
