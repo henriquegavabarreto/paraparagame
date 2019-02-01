@@ -4,8 +4,8 @@ var player = require('../config/youtube.js')
 
 function createNewNote (event) {
   if ( editor.status && player.getState() === 'paused') {
-    if ( event.key === editor.shortCuts.rightHand ) {
-      createNote()
+    if ( event.key === editor.shortCuts.rightHand || event.key === editor.shortCuts.leftHand) {
+      createNote(event.key)
     }
   }
 }
