@@ -5,13 +5,14 @@ var editor = require('../../config/editor.js')
 
 function createNote (pressedKey) {
   let x = 0
-  
+
   if ( pressedKey === editor.shortCuts.rightHand ) {
     x = 108
   } else {
     x = 22
   }
 
+  // create a note only if the space is empty
   if (!checkChartPosition(x)) {
     let note = new PIXI.Sprite.fromImage('../assets/move.png')
     note.x = x
@@ -21,9 +22,9 @@ function createNote (pressedKey) {
     note.name = songManager.getNearestBeat()
     elements.addChild(note)
   }
-  console.log(elements.children)
 }
 
+// Checks if there's a note at the current position
 function checkChartPosition (x) {
   for (let notes of elements.children) {
     if (notes.x === x && notes.y === (56 * songManager.getCurrentBeat()) + 58) {

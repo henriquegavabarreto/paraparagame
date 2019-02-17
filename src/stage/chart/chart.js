@@ -2,6 +2,16 @@ import * as PIXI from 'pixi.js'
 import { chart } from '../../config/containers.js'
 
 function setChart () {
+  setStaff()
+
+  setGuideline()
+
+  setVideoText()
+
+  setTimeText()
+}
+
+function setStaff () {
   for ( let i = 0; i <= 1200; i += 56 ) {
     let staff = new PIXI.Sprite.fromImage('../assets/staff.png')
     staff.x = 20
@@ -9,14 +19,17 @@ function setChart () {
     staff.scale.x = 0.9
     chart.addChild(staff)
   }
+}
 
-  let guideline = new PIXI.Sprite.fromImage('../assets/guideline.png')
+function setGuideline () {
+  let guideline = PIXI.Sprite.fromImage('../assets/guideline.png')
   guideline.x = 6
   guideline.y = 59
   guideline.scale.x = 0.95
   chart.addChild(guideline)
+}
 
-
+function setVideoText () {
   var videoText = new PIXI.Text( 'Video Time:', {
     fontSize: 18,
     fontFamily: 'Arial',
@@ -27,10 +40,15 @@ function setChart () {
 
   videoText.x = 225
   videoText.y = 70
+  videoText.name = 'videoText'
 
   videoText.cacheAsBitmap = true
 
   chart.addChild(videoText)
+}
+
+function setTimeText () {
+  let videoText = chart.getChildByName('videoText')
 
   var timeText = new PIXI.Text( '0', {
     fontSize: 18,
