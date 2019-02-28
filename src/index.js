@@ -2,6 +2,7 @@ import * as PIXI from 'pixi.js'
 import app from './config/pixi.js'
 import { chart, elements, circleSelection, guideNumbers } from './config/containers.js'
 import { setChart } from './stage/chart/chart.js'
+import { setCircles } from './stage/circleSelection/circle-selection.js'
 
 app.stage.addChild(chart)
 app.stage.addChild(elements)
@@ -26,10 +27,12 @@ var playButton = require('./listeners/play.js')
 
 import { beatSelectors } from './short-cuts/beat-select.js'
 
-import { noteCreator } from './short-cuts/beat-creator.js'
+import { noteCreator } from './short-cuts/note-creator.js'
 
 var seekInput = require('./listeners/seek-input.js')
 
 setChart()
+
+setCircles()
 
 var onPaused = require('./listeners/on-pause.js')
