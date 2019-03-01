@@ -2,7 +2,7 @@ import * as PIXI from 'pixi.js'
 import app from './config/pixi.js'
 import { chart, elements, circleSelection, guideNumbers } from './config/containers.js'
 import { setChart } from './stage/chart/chart.js'
-import { setCircles } from './stage/circleSelection/circle-selection.js'
+import { setCircles } from './stage/circleSelection/circles.js'
 
 app.stage.addChild(chart)
 app.stage.addChild(elements)

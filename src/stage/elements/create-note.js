@@ -2,6 +2,8 @@ import * as PIXI from 'pixi.js'
 import { elements } from '../../config/containers.js'
 var songManager = require('../../config/song-manager.js')
 var editor = require('../../config/editor.js')
+import { enableCircleClick } from '../circleSelection/circle-selection.js'
+var addMove = require('../../moves/add-move.js')
 
 function createNote (pressedKey) {
   let x = 0
@@ -21,6 +23,9 @@ function createNote (pressedKey) {
     note.tint = 0xFF00FF
     note.name = songManager.getNearestBeat()
     elements.addChild(note)
+    console.log(`number of notes: *${elements.children.length}*`);
+    enableCircleClick()
+    addMove()
   }
 }
 

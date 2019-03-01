@@ -6,13 +6,15 @@ let menuModal = document.getElementById('menu-modal')
 let menuButton = document.getElementById('menu-button')
 
 function toggleModal() {
-  if( player.getState() !== 'paused' ) {
-    player.pause()
+  if (!editor.areaSelect) {
+    if( player.getState() !== 'paused' ) {
+      player.pause()
+    }
+
+    menuModal.classList.toggle("show-menu-options")
+
+    editor.status = false
   }
-
-  menuModal.classList.toggle("show-menu-options")
-
-  editor.status = false
 }
 
 module.exports = menuButton.addEventListener('click', toggleModal)

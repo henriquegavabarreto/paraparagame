@@ -5,7 +5,7 @@ var editor = require('../config/editor.js')
 seekInput = document.getElementById('beat-to-seek')
 
 function seekToBeat (event) {
-  if ( event.key === 'Enter' && editor.status ) {
+  if ( event.key === 'Enter' && editor.status && !editor.areaSelect ) {
     if ( isNaN(seekInput.value) ) {
       alert('The input must be a number')
     } else if ( seekInput.value % 1 !== 0 ) {

@@ -2,7 +2,7 @@ var player = require('../config/youtube.js')
 var editor = require('../config/editor.js')
 
 function adjustRate (event) {
-  if ( editor.status ) {
+  if ( editor.status && !editor.areaSelect ) {
     if ( event.key === editor.shortCuts.slower ) {
       let v = player.getPlaybackRate()
       if ( v > 0.25 ) {

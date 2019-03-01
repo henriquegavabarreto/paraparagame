@@ -11,6 +11,10 @@ function getCurrentBeat () {
   return currentBeat
 }
 
+function getCurrentRoundBeat () {
+  return Math.round(getCurrentBeat())
+}
+
 function getCurrentQuarterBeat () {
   let currentQuarterBeat = getCurrentBeat() * 4
   return currentQuarterBeat
@@ -36,6 +40,7 @@ function getLastBeatTime () {
 
 exports.getTempo = getTempo
 exports.getCurrentBeat = getCurrentBeat
+exports.getCurrentRoundBeat = getCurrentRoundBeat
 exports.getCurrentQuarterBeat = getCurrentQuarterBeat
 exports.getNearestBeat = getNearestBeat
 exports.getNearestBeatTime = getNearestBeatTime
