@@ -1,6 +1,7 @@
 var danceChart = require('../../data/dance-chart.js')
 var songManager = require('../config/song-manager.js')
 var editor = require('../config/editor.js')
+var checkMoves = require('./check-moves.js')
 
 function addMove (pressedKey) {
   let beatOnMove = checkMoves()
@@ -21,23 +22,6 @@ function addMove (pressedKey) {
       moves[2] = 'S'
       moves = moves.join(',')
       danceChart.moves[beatOnMove] = moves
-    }
-  }
-}
-
-function checkMoves () {
-  if ( danceChart.moves.length === 0 ) {
-    return -1
-  } else {
-    for(let i = 0; i < danceChart.moves.length; i++){
-      let move = danceChart.moves[i]
-      move = move.split(',')
-      if ( move[0] == songManager.getNearestBeat() ) {
-        return i
-        break
-      } else if ( i == danceChart.moves.length - 1) {
-        return -1
-      }
     }
   }
 }
