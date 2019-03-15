@@ -29,6 +29,8 @@ import { beatSelectors } from './short-cuts/beat-select.js'
 
 import { noteCreator } from './short-cuts/note-creator.js'
 
+import { deleteMove } from './moves/delete-move.js'
+
 var seekInput = require('./listeners/seek-input.js')
 
 setChart()

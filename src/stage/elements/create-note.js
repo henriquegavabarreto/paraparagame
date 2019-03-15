@@ -21,7 +21,11 @@ function createNote (pressedKey) {
     note.y = (56 * songManager.getCurrentBeat()) + 58
     note.scale.x = 0.9
     note.tint = 0xFF00FF
-    note.name = songManager.getNearestBeat()
+    if (x === 22) {
+      note.name = `${songManager.getNearestBeat()}L`
+    } else {
+      note.name = `${songManager.getNearestBeat()}R`
+    }
     elements.addChild(note)
     enableCircleClick()
     addMove(pressedKey)

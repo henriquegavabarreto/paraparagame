@@ -1,7 +1,7 @@
 var danceChart = require('../../data/dance-chart.js')
 var songManager = require('../config/song-manager.js')
 
-function checkMoves () {
+function checkMoves () { // return move index on the danceChart or -1
   if ( danceChart.moves.length === 0 ) {
     return -1
   } else {
