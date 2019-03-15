@@ -23,9 +23,8 @@ function createNote (pressedKey) {
     note.tint = 0xFF00FF
     note.name = songManager.getNearestBeat()
     elements.addChild(note)
-    console.log(`number of notes: *${elements.children.length}*`);
     enableCircleClick()
-    addMove()
+    addMove(pressedKey)
   }
 }
 

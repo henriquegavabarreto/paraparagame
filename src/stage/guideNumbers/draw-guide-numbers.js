@@ -14,8 +14,6 @@ function drawGuideNumbers () {
   for( let i = videoStart; i <= videoEnd; i += songManager.getTempo() ) {
     let guideNumber = Math.round( ( i - song.offset ) / songManager.getTempo() )
 
-    console.log(guideNumber, ( i - song.offset ) / songManager.getTempo())
-
     if ( Math.abs(guideNumber % editor.adjustments.numbers) === 0) {
 
       var text = new PIXI.Text( guideNumber, {

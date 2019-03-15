@@ -18,17 +18,21 @@ function setCircles () {
     circle.buttonMode = true
     circle.cacheAsBitmap = true
     circle.name = `${i}`
+
     circle.on('mouseover', (event) => {
       circle.alpha = 0.1
     })
+
     circle.on('mouseout', (event) => {
       circle.alpha = 1
     })
+
     circle.on('mousedown', (event) => {
       circle.alpha = 1
       console.log(circle.name)
       disableCircleClick()
     })
+    
     circleSelection.addChild(circle)
   }
 }
