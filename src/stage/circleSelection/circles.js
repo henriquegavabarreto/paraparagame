@@ -2,6 +2,7 @@ import * as PIXI from 'pixi.js'
 import { circleSelection } from '../../config/containers.js'
 import { grid } from '../../config/grid.js'
 import { disableCircleClick } from './circle-selection.js'
+var addHandInfo = require('../../moves/add-hand-info.js')
 
 function setCircles () {
   var circleConfig = {
@@ -29,10 +30,11 @@ function setCircles () {
 
     circle.on('mousedown', (event) => {
       circle.alpha = 1
-      console.log(circle.name)
+      //console.log(circle.name)
+      addHandInfo(circle.name)
       disableCircleClick()
     })
-    
+
     circleSelection.addChild(circle)
   }
 }
