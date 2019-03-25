@@ -38,3 +38,5 @@ setChart()
 setCircles()
 
 var onPaused = require('./listeners/on-pause.js')
+
+var showCues = require('./listeners/show-cues.js')

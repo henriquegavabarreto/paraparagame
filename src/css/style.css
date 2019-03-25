@@ -206,12 +206,12 @@ body {
   color: #FF0000;
 }
 
-.timing-content label, .song-content label {
+.timing-content label, .song-content label, .menu-content div {
   margin-top: 3%;
   margin-bottom: 2%;
 }
 
-.timing-content button, .song-content button {
+.timing-content button, .song-content button, .menu-content button {
   margin-top: 10%;
   margin-bottom: 5%;
   background-color: #000000;
@@ -226,7 +226,11 @@ body {
   transition: all 0.2s;
 }
 
-.timing-content button:hover, .song-content button:hover {
+/* .save-changes button {
+  padding: 10% 40% 10% 40%;
+} */
+
+.timing-content button:hover, .song-content button:hover, .menu-content button:hover {
   box-sizing: border-box;
   border-color: #000000;
   color: #000000;
@@ -234,7 +238,7 @@ body {
   text-shadow: 1px 1px 1px #DDDDDD;
 }
 
-.timing-content button:active, .song-content button:active {
+.timing-content button:active, .song-content button:active, .menu-content button:active {
   box-sizing: border-box;
   border-color: #FFFFFF;
   color: #FFFFFF;
