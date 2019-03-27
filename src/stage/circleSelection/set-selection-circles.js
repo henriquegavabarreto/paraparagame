@@ -1,10 +1,10 @@
 import * as PIXI from 'pixi.js'
 import { circleSelection } from '../../config/containers.js'
 import { grid } from '../../config/grid.js'
-import { disableCircleClick } from './circle-selection.js'
+import { disableCircleClick } from './disable-circle-click.js'
 var addHandInfo = require('../../moves/add-hand-info.js')
 
-function setCircles () {
+function setSelectionCircles () {
   var circleConfig = {
     size: 80,
     lineWidth: 12,
@@ -39,4 +39,4 @@ function setCircles () {
   }
 }
 
-export { setCircles }
+export { setSelectionCircles }

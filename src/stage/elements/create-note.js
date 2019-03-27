@@ -2,7 +2,7 @@ import * as PIXI from 'pixi.js'
 import { elements } from '../../config/containers.js'
 var songManager = require('../../config/song-manager.js')
 var editor = require('../../config/editor.js')
-import { enableCircleClick } from '../circleSelection/circle-selection.js'
+import { enableCircleClick } from '../circleSelection/enable-circle-click.js'
 var addMove = require('../../moves/add-move.js')
 
 function createNote (pressedKey) {

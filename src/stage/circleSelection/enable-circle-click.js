@@ -8,11 +8,4 @@ function enableCircleClick () {
   })
 }
 
-function disableCircleClick () {
-  editor.areaSelect = false
-  circleSelection.children.forEach(circle => {
-    circle.interactive = false
-  })
-}
-
-export { enableCircleClick, disableCircleClick }
+export { enableCircleClick }

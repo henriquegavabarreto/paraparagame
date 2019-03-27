@@ -1,7 +1,7 @@
 import * as PIXI from 'pixi.js'
 import { chart } from '../../config/containers.js'
 
-function setChart () {
+function setBackgroundChart () {
   setStaff()
 
   setGuideline()
@@ -65,4 +65,4 @@ function setTimeText () {
   chart.addChild(timeText)
 }
 
-export { setChart }
+export { setBackgroundChart }

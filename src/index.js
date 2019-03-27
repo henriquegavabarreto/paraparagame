@@ -1,8 +1,8 @@
 import * as PIXI from 'pixi.js'
 import app from './config/pixi.js'
 import { chart, elements, circleSelection, guideNumbers } from './config/containers.js'
-import { setChart } from './stage/chart/chart.js'
-import { setCircles } from './stage/circleSelection/circles.js'
+import { setBackgroundChart } from './stage/chart/set-background-chart.js'
+import { setSelectionCircles } from './stage/circleSelection/set-selection-circles.js'
 
 app.stage.addChild(chart)
 app.stage.addChild(elements)
@@ -33,10 +33,8 @@ import { deleteMove } from './moves/delete-move.js'
 
 var seekInput = require('./listeners/seek-input.js')
 
-setChart()
+setBackgroundChart()
 
-setCircles()
+setSelectionCircles()
 
 var onPaused = require('./listeners/on-pause.js')
-
-var showCues = require('./listeners/show-cues.js')
