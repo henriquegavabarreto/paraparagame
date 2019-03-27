@@ -12,6 +12,11 @@ var editorConfig = {
     leftHand: 'z',
     rightHand: 'x'
   },
+  keyStatus: {
+    zPressed: false,
+    xPressed: false
+  },
+  beatArray: [],
   adjustments: {
     numbers: 4
   }
