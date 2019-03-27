@@ -1,5 +1,5 @@
 import * as PIXI from 'pixi.js'
-import { chart } from '../../config/containers.js'
+import { backgroundChart } from '../../config/containers.js'
 
 function setBackgroundChart () {
   setStaff()
@@ -17,7 +17,7 @@ function setStaff () {
     staff.x = 20
     staff.y = i
     staff.scale.x = 0.9
-    chart.addChild(staff)
+    backgroundChart.addChild(staff)
   }
 }
 
@@ -26,7 +26,7 @@ function setGuideline () {
   guideline.x = 6
   guideline.y = 59
   guideline.scale.x = 0.95
-  chart.addChild(guideline)
+  backgroundChart.addChild(guideline)
 }
 
 function setVideoText () {
@@ -44,11 +44,11 @@ function setVideoText () {
 
   videoText.cacheAsBitmap = true
 
-  chart.addChild(videoText)
+  backgroundChart.addChild(videoText)
 }
 
 function setTimeText () {
-  let videoText = chart.getChildByName('videoText')
+  let videoText = backgroundChart.getChildByName('videoText')
 
   var timeText = new PIXI.Text( '0', {
     fontSize: 18,
@@ -62,7 +62,7 @@ function setTimeText () {
   timeText.y = 70
   timeText.name = 'timeText'
 
-  chart.addChild(timeText)
+  backgroundChart.addChild(timeText)
 }
 
 export { setBackgroundChart }

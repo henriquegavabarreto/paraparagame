@@ -29,7 +29,6 @@ function validateTiming (startInput, endInput, offsetInput, bpmInput) {
     if ( ( danceChart.info.song.offset != offsetInput || danceChart.info.song.bpm != bpmInput ) && player.getDuration() > 0) {
       shouldDrawNumbers = true
       offsetDifference = danceChart.info.song.offset - offsetInput
-      console.log(offsetDifference)
     }
 
     danceChart.info.video.start = parseFloat(startInput)

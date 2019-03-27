@@ -1,8 +1,8 @@
-import { chart } from '../config/containers.js'
+import { backgroundChart } from '../config/containers.js'
 var player = require('../config/youtube.js')
 
 function updateTimeText () {
-  let timeText = chart.getChildByName('timeText')
+  let timeText = backgroundChart.getChildByName('timeText')
   timeText.text = player.getCurrentTime()
 }
 

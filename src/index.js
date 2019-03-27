@@ -1,10 +1,10 @@
 import * as PIXI from 'pixi.js'
 import app from './config/pixi.js'
-import { chart, elements, circleSelection, guideNumbers } from './config/containers.js'
+import { backgroundChart, elements, circleSelection, guideNumbers } from './config/containers.js'
 import { setBackgroundChart } from './stage/chart/set-background-chart.js'
 import { setSelectionCircles } from './stage/circleSelection/set-selection-circles.js'
 
-app.stage.addChild(chart)
+app.stage.addChild(backgroundChart)
 app.stage.addChild(elements)
 app.stage.addChild(circleSelection)
 app.stage.addChild(guideNumbers)

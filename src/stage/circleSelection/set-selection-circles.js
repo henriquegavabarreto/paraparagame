@@ -30,7 +30,6 @@ function setSelectionCircles () {
 
     circle.on('mousedown', (event) => {
       circle.alpha = 1
-      //console.log(circle.name)
       addHandInfo(circle.name)
       disableCircleClick()
     })
