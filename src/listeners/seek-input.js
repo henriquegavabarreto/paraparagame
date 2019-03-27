@@ -11,7 +11,7 @@ function seekToBeat (event) {
     } else if ( seekInput.value % 1 !== 0 ) {
       alert('The input must be a valid number')
     } else {
-      player.seek(songManager.getNearestBeatTime( (seekInput.value * 4 ) - songManager.getCurrentQuarterBeat() ))
+      player.seek(songManager.getNearestBeatTime( ((seekInput.value - 1) * 4 ) - songManager.getCurrentQuarterBeat() ))
     }
   } else if ( !editor.status ) {
     alert('The player is not ready yet.\nPlease select a video.')
