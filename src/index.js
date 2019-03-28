@@ -23,7 +23,8 @@ var seekInput = require('./listeners/player/seek-input.js')
 
 import { beatSelectors } from './listeners/shortcuts/beat-select.js'
 
-import { noteCreator } from './listeners/shortcuts/note-creator.js'
+import { noteKeyDown } from './notes/note-key-down.js'
+import { noteKeyUp } from './notes/note-key-up.js'
 
 import { deleteMove } from './moves/delete-move.js'
 
