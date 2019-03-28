@@ -1,6 +1,6 @@
-var danceChart = require('../../data/dance-chart.js')
-var editor = require('../config/editor.js')
-var player = require('../config/youtube.js')
+var danceChart = require('../../../data/dance-chart.js')
+var editor = require('../../config/editor.js')
+var player = require('../../config/youtube.js')
 
 let songModal = document.getElementById('song-modal')
 let songButton = document.getElementById('song-options-button')

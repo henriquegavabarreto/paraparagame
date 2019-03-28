@@ -1,10 +1,10 @@
-var danceChart = require('../../data/dance-chart.js')
-var player = require('../config/youtube.js')
-var editor = require('../config/editor.js')
+var danceChart = require('../../../data/dance-chart.js')
+var player = require('../../config/youtube.js')
+var editor = require('../../config/editor.js')
 
-import { startAnimation } from '../animations/animation-manager.js'
+import { startAnimation } from '../../animations/animation-manager.js'
 
-import { drawGuideNumbers } from '../stage/guideNumbers/draw-guide-numbers.js'
+import { drawGuideNumbers } from '../../stage/guideNumbers/draw-guide-numbers.js'
 
 var saveSongButton = document.getElementById('song-submitter')
 var songModal = document.getElementById('song-modal')
