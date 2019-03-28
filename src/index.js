@@ -18,8 +18,8 @@ import { saveSongOptions } from './listeners/menus/save-song-options.js'
 var showMenuOptions = require('./listeners/menus/show-menu-modal.js')
 import { saveMenuOptions } from './listeners/menus/save-menu-options.js'
 
-var playShortCut = require('./short-cuts/play.js')
-var adjustPlaybackRate = require('./short-cuts/playback-rate.js')
+var playShortCut = require('./listeners/player/shortcuts/play.js')
+var adjustPlaybackRate = require('./listeners/player/shortcuts/playback-rate.js')
 
 var slowerButton = require('./listeners/player/adjust-playback-rate.js').slower
 var fasterButton = require('./listeners/player/adjust-playback-rate.js').faster
@@ -28,9 +28,9 @@ var onPaused = require('./listeners/player/on-pause.js')
 
 var seekInput = require('./listeners/player/seek-input.js')
 
-import { beatSelectors } from './short-cuts/beat-select.js'
+import { beatSelectors } from './listeners/shortcuts/beat-select.js'
 
-import { noteCreator } from './short-cuts/note-creator.js'
+import { noteCreator } from './listeners/shortcuts/note-creator.js'
 
 import { deleteMove } from './moves/delete-move.js'
 

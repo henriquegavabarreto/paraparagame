@@ -1,6 +1,6 @@
-var player = require('../config/youtube.js')
-var editor = require('../config/editor.js')
-var songManager = require('../config/song-manager.js')
+var player = require('../../config/youtube.js')
+var editor = require('../../config/editor.js')
+var songManager = require('../../config/song-manager.js')
 
 function beatSelect (event) {
   if ( editor.status && player.getState() === 'paused' && !editor.areaSelect ) {
