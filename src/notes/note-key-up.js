@@ -2,6 +2,8 @@ var checkNoteType = require('./check-note-type.js')
 var beatArray = require('../config/beat-array.js')
 var editor = require('../config/editor.js')
 var player = require('../config/youtube.js')
+var addMove = require('../moves/add-move.js')
+var danceChart = require('../../data/dance-chart.js')
 
 function stopNoteCreation (event) {
   if ( editor.status && player.getState() === 'paused' && !editor.areaSelect ) {
@@ -10,6 +12,7 @@ function stopNoteCreation (event) {
         editor.keyStatus.xPressed = false
         beatArray.sort()
         checkNoteType()
+        addRequiredMoves(event.key)
         console.log(editor.beatArray)
         beatArray.clear()
       }
@@ -18,6 +21,7 @@ function stopNoteCreation (event) {
         editor.keyStatus.zPressed = false
         beatArray.sort()
         checkNoteType()
+        addRequiredMoves(event.key)
         console.log(editor.beatArray)
         beatArray.clear()
       }
@@ -28,3 +32,10 @@ function stopNoteCreation (event) {
 var noteKeyUp = window.addEventListener('keyup', stopNoteCreation)
 
 export { noteKeyUp }
+
+function addRequiredMoves (key) {
+  editor.beatArray.forEach(beat => {
+    addMove(key, beat)
+  })
+  console.log(danceChart.moves)
+}

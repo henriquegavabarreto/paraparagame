@@ -3,14 +3,14 @@ var songManager = require('../config/song-manager.js')
 var editor = require('../config/editor.js')
 var checkMoves = require('./check-moves.js')
 
-function addMove (pressedKey) {
-  let beatOnMove = checkMoves()
+function addMove (pressedKey, beat) {
+  let beatOnMove = checkMoves(beat)
 
   if ( beatOnMove === -1 ) { // if there is no move on the beat yet
     if ( pressedKey === editor.shortCuts.rightHand ) { // S for selected and X for no data
-      danceChart.moves.push(`${songManager.getNearestBeat()},1,X,S`)
+      danceChart.moves.push(`${beat},1,X,S`)
     } else if ( pressedKey === editor.shortCuts.leftHand ) {
-      danceChart.moves.push(`${songManager.getNearestBeat()},1,S,X`)
+      danceChart.moves.push(`${beat},1,S,X`)
     }
   } else { // if there is a move on this beat
     let moves = danceChart.moves[beatOnMove].split(',')
