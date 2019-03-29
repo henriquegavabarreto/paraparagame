@@ -39,7 +39,6 @@ function createNoteWhenSelected (beats) {
       setTimeout(function () {
         createNote()
         beatArray.add()
-        console.log(editor.beatArray)
       }, 80)
     } else if (beats === 4) {
       for(let i = 0; i <= 3; i++) { // adds notes in between
@@ -47,7 +46,6 @@ function createNoteWhenSelected (beats) {
           let beatToAdd = songManager.getNearestBeat() - i
           createNote(pressedKey, beatToAdd)
           beatArray.add(beatToAdd)
-          console.log(editor.beatArray)
         }, 80)
       }
     } else if (beats === -4) {
@@ -56,7 +54,6 @@ function createNoteWhenSelected (beats) {
           let beatToAdd = songManager.getNearestBeat() + i
           createNote(pressedKey, beatToAdd)
           beatArray.add(beatToAdd)
-          console.log(editor.beatArray)
         }, 80)
       }
     }

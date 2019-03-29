@@ -2,7 +2,6 @@ import * as PIXI from 'pixi.js'
 import { circleSelection } from '../../config/containers.js'
 import { grid } from '../../config/grid.js'
 import { addSelectionToArray } from '../../circles/add-selection-to-array.js'
-//var addHandInfo = require('../../moves/add-hand-info.js')
 var editor = require('../../config/editor.js')
 
 function setSelectionCircles () {

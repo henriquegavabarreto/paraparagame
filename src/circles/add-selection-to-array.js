@@ -11,7 +11,11 @@ function addSelectionToArray (circle) {
     player.seek(songManager.getBeatTime(editor.beatArray[editor.beatArray.length - 1]))
   }
   if (editor.selectedCircles.length >= beatArray.getCircleCount()) { // if we got all the positions we needed, disable clicks
+    console.log(editor.selectedCircles, editor.beatArray)
+    //TODO: insert all the information we got to the danceChart and tint the notes
     disableCircleClick()
+    clearSelectedCircles()
+    beatArray.clear()
   }
 }
 
