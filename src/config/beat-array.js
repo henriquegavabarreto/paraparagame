@@ -11,5 +11,9 @@ function clear () {
   editor.beatArray = []
 }
 
+function sort () {
+  editor.beatArray.sort(function(a,b){ return a - b })
+}
+
 exports.add = add
 exports.clear = clear

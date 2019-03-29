@@ -4,32 +4,22 @@ var songManager = require('../../config/song-manager.js')
 var beatArray = require('../../config/beat-array.js')
 import { createNote } from '../../stage/elements/create-note.js'
 
+// seek takes some time to take effect for some reason. setTimeout is here to give the desired effect of note creation
+
 function beatSelect (event) {
   if ( editor.status && player.getState() === 'paused' && !editor.areaSelect ) {
     if ( event.key === editor.shortCuts.nextQuarterBeat ) {
       player.seek(songManager.getNearestBeatTime(1))
-      if ( editor.keyStatus.zPressed || editor.keyStatus.xPressed ) {
-        beatArray.add()
-        createNote()
-      }
+      createNoteWhenSelected()
     } else if ( event.key === editor.shortCuts.previousQuarterBeat ) {
       player.seek(songManager.getNearestBeatTime(-1))
-      if ( editor.keyStatus.zPressed || editor.keyStatus.xPressed ) {
-        beatArray.add()
-        createNote()
-      }
+      createNoteWhenSelected()
     } else if ( event.key === editor.shortCuts.nextBeat ) {
       player.seek(songManager.getNearestBeatTime(4))
-      if ( editor.keyStatus.zPressed || editor.keyStatus.xPressed ) {
-        beatArray.add()
-        createNote()
-      }
+      createNoteWhenSelected()
     } else if ( event.key === editor.shortCuts.previousBeat ) {
       player.seek(songManager.getNearestBeatTime(-4))
-      if ( editor.keyStatus.zPressed || editor.keyStatus.xPressed ) {
-        beatArray.add()
-        createNote()
-      }
+      createNoteWhenSelected()
     }
   }
 }
@@ -37,3 +27,13 @@ function beatSelect (event) {
 var beatSelectors = window.addEventListener('keydown', beatSelect)
 
 export { beatSelectors }
+
+function createNoteWhenSelected () {
+  if ( editor.keyStatus.zPressed || editor.keyStatus.xPressed ) {
+    setTimeout(function () {
+      createNote()
+      beatArray.add()
+      console.log(editor.beatArray)
+    }, 60)
+  }
+}

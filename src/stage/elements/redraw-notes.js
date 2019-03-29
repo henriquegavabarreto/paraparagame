@@ -2,6 +2,8 @@ import { elements } from '../../config/containers.js'
 import { drawNote } from './draw-note.js'
 var danceChart = require('../../../data/dance-chart.js')
 
+// NOTE: redrawNotes should be fixed after the movements are added to the danceChart moves array
+
 function redrawNotes (offsetDifference, bpm) {
   elements.removeChildren() // remove all notes
   let moves = danceChart.moves

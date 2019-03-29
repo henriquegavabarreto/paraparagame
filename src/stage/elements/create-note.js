@@ -5,7 +5,9 @@ var editor = require('../../config/editor.js')
 import { enableCircleClick } from '../circleSelection/enable-circle-click.js'
 var addMove = require('../../moves/add-move.js')
 
-function createNote (pressedKey) {
+// NOTE: Check if adding checkChartPosition to the drawNote function wouldn't be better
+
+function createNote (pressedKey, beat) {
   let x = 22 // default x to left hand
   if (pressedKey) {
     if ( pressedKey === editor.shortCuts.rightHand ) x = 108
@@ -13,11 +15,10 @@ function createNote (pressedKey) {
     if ( editor.keyStatus.xPressed === true ) x = 108
   }
 
+  if (!beat) beat = songManager.getNearestBeat()
   // create a note only if the space is empty
   if (!checkChartPosition(x)) {
     drawNote(x, songManager.getNearestBeat())
-    console.log(`note y = ${elements.children[elements.children.length-1].y}`)
-    console.log(`${elements.children.length} notes in total`)
     //enableCircleClick()
     //addMove(pressedKey)
   }
