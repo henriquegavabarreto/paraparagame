@@ -4,6 +4,7 @@ var editor = require('../config/editor.js')
 var player = require('../config/youtube.js')
 var addMove = require('../moves/add-move.js')
 var danceChart = require('../../data/dance-chart.js')
+import { getHandPositions } from '../circles/get-hand-positions.js'
 
 function stopNoteCreation (event) {
   if ( editor.status && player.getState() === 'paused' && !editor.areaSelect ) {
@@ -11,19 +12,19 @@ function stopNoteCreation (event) {
       if ( editor.keyStatus.xPressed === true ) {
         editor.keyStatus.xPressed = false
         beatArray.sort()
-        checkNoteType()
+        //checkNoteType()
         addRequiredMoves(event.key)
-        console.log(editor.beatArray)
-        beatArray.clear()
+        getHandPositions()
+        //beatArray.clear()
       }
     } else if ( event.key === editor.shortCuts.leftHand) {
       if ( editor.keyStatus.zPressed === true ) {
         editor.keyStatus.zPressed = false
         beatArray.sort()
-        checkNoteType()
+        //checkNoteType()
         addRequiredMoves(event.key)
-        console.log(editor.beatArray)
-        beatArray.clear()
+        getHandPositions()
+        //beatArray.clear()
       }
     }
   }

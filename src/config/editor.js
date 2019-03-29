@@ -17,6 +17,7 @@ var editorConfig = {
     xPressed: false
   },
   beatArray: [],
+  selectedCircles: [],
   adjustments: {
     numbers: 4
   }

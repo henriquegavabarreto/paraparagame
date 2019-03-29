@@ -16,6 +16,15 @@ function sort () {
   editor.beatArray.sort(function(a,b){ return a - b })
 }
 
+function getCircleCount () {
+  if ( editor.beatArray.length === 1 ) {
+    return 1
+  } else {
+    return 2
+  }
+}
+
 exports.add = add
 exports.clear = clear
 exports.sort = sort
+exports.getCircleCount = getCircleCount

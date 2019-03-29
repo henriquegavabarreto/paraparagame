@@ -17,8 +17,6 @@ function createNote (pressedKey, beat) {
 
   if (!beat) beat = songManager.getNearestBeat()
     drawNote(x, beat)
-    //enableCircleClick()
-    //addMove(pressedKey)
 }
 
 export { createNote }
