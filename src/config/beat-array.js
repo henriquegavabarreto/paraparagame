@@ -17,3 +17,4 @@ function sort () {
 
 exports.add = add
 exports.clear = clear
+exports.sort = sort
