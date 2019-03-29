@@ -1,8 +1,7 @@
-// import { createNote } from '../stage/elements/create-note.js'
+var checkNoteType = require('./check-note-type.js')
 var beatArray = require('../config/beat-array.js')
 var editor = require('../config/editor.js')
 var player = require('../config/youtube.js')
-import { createNote } from '../stage/elements/create-note.js'
 
 function stopNoteCreation (event) {
   if ( editor.status && player.getState() === 'paused' && !editor.areaSelect ) {
@@ -10,6 +9,7 @@ function stopNoteCreation (event) {
       if ( editor.keyStatus.xPressed === true ) {
         editor.keyStatus.xPressed = false
         beatArray.sort()
+        checkNoteType()
         console.log(editor.beatArray)
         beatArray.clear()
       }
@@ -17,6 +17,7 @@ function stopNoteCreation (event) {
       if ( editor.keyStatus.zPressed === true ) {
         editor.keyStatus.zPressed = false
         beatArray.sort()
+        checkNoteType()
         console.log(editor.beatArray)
         beatArray.clear()
       }

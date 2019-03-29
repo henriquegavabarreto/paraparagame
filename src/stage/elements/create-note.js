@@ -16,22 +16,9 @@ function createNote (pressedKey, beat) {
   }
 
   if (!beat) beat = songManager.getNearestBeat()
-  // create a note only if the space is empty
-  if (!checkChartPosition(x)) {
-    drawNote(x, songManager.getNearestBeat())
+    drawNote(x, beat)
     //enableCircleClick()
     //addMove(pressedKey)
-  }
-}
-
-// Checks if there's a note at the current position
-function checkChartPosition (x) {
-  for (let notes of elements.children) {
-    if (notes.x === x && notes.y === (56 * songManager.getNearestBeat()/4) + 58) {
-      return true
-      break
-    }
-  }
 }
 
 export { createNote }
