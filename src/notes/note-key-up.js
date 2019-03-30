@@ -5,6 +5,9 @@ var addMove = require('../moves/add-move.js')
 var danceChart = require('../../data/dance-chart.js')
 import { getHandPositions } from '../circles/get-hand-positions.js'
 
+// FIX: If there is a note already in the end of the path, don't add any notes or moves - when the key is released trigger an alert
+// It may be needed to have two arrays, one for valid spots for creation and another with invalid spots
+
 function stopNoteCreation (event) {
   if ( editor.status && player.getState() === 'paused' && !editor.areaSelect ) {
     if ( event.key === editor.shortCuts.rightHand ) {

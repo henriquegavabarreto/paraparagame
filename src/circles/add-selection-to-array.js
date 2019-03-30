@@ -4,6 +4,7 @@ var player = require('../config/youtube.js')
 var songManager = require('../config/song-manager.js')
 var clearSelectedCircles = require('./clear-selected-circles.js')
 import { disableCircleClick } from '../stage/circleSelection/disable-circle-click.js'
+var addHandInfo = require('../moves/add-hand-info.js')
 
 function addSelectionToArray (circle) {
   editor.selectedCircles.push(circle)
@@ -12,6 +13,7 @@ function addSelectionToArray (circle) {
   }
   if (editor.selectedCircles.length >= beatArray.getCircleCount()) { // if we got all the positions we needed, disable clicks
     console.log(editor.selectedCircles, editor.beatArray)
+    addHandInfo()
     //TODO: insert all the information we got to the danceChart and tint the notes
     disableCircleClick()
     clearSelectedCircles()
