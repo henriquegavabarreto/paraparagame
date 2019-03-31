@@ -16,7 +16,8 @@ function createNote (pressedKey, beat) {
   }
 
   if (!beat) beat = songManager.getNearestBeat()
-    drawNote(x, beat)
+
+  drawNote(x, beat)
 }
 
 export { createNote }

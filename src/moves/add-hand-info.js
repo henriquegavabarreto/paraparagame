@@ -56,14 +56,12 @@ function addHandInfo () {
 
 
   // check which hand on the current move is S
-  // change it to be type (1, 2 or 3) start position
-  // if it is sharp (1) it doesnt need ending position, duration or progress (0, 1 or 2 - start, in progress and end)
-  // if there is a hold or move, search for the the end of this move or hold and do the calculation
-  // so hold and move would have progress at the end of the string and sharp would not
-  // if the type is a number and not X, it should be detected
-  // see if that part of the move is X, if it is, don't detect it
-  // 19 (sharp position 9) or S9
-  // 291 (hold, position 9, starts at this beat) H9S / H9P / H9E
+  // change it to be type S (sharp), H (hold) or M (motion)
+  // if it is S it doesnt need ending position or progress
+  // calculation of duration will be done on the fly
+  // if the move is X, it shouldn't be detected
+  // S9 (sharp position 9)
+  // H9S (hold, position 9, starts at this beat) / HP (hold in progress) / H9E (hold end at position 9)
 
 }
 
