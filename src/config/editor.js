@@ -18,6 +18,7 @@ var editorConfig = {
   },
   beatArray: [],
   selectedCircles: [],
+  selectedHand: '',
   adjustments: {
     numbers: 4
   }

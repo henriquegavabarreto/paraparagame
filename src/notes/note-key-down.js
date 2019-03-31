@@ -7,12 +7,14 @@ function startNoteCreation (event) {
   if ( editor.status && player.getState() === 'paused' && !editor.areaSelect ) {
     if ( event.key === editor.shortCuts.rightHand) {
       if ( editor.keyStatus.xPressed === false && editor.keyStatus.zPressed === false ) {
+        editor.selectedHand = 'R'
         editor.keyStatus.xPressed = true
         beatArray.add()
         createNote(event.key)
       }
     } else if ( event.key === editor.shortCuts.leftHand) {
       if ( editor.keyStatus.zPressed === false && editor.keyStatus.xPressed === false ) {
+        editor.selectedHand = 'L'
         editor.keyStatus.zPressed = true
         beatArray.add()
         createNote(event.key)
