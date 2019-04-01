@@ -14,14 +14,12 @@ function deleteNote (event) {
         searchAndDelete(songManager.getNearestBeat(), handMove, 'L')
         removeNoInfoMoves()
       }
-      console.log(danceChart.moves)
     } else if ( event.key === 'w' ) {
       let handMove = getHandMove(songManager.getNearestBeat(), 'R')
       if ( handMove !== 'X' ){
         searchAndDelete(songManager.getNearestBeat(), handMove, 'R')
         removeNoInfoMoves()
       }
-      console.log(danceChart.moves)
     }
   }
 }
@@ -35,27 +33,33 @@ function searchAndDelete (beat, handMove, hand) {
     elements.removeChild(elements.getChildByName(`${beat}${hand}`)) // remove note
     removeHandInfo(beat, hand)
   } else if ( handMove[0] === 'H' || handMove[0] === 'M' ) {
-    if ( handMove[handMove.length - 1] === 'S' ) { // if it is the starting movement
-      let endBeat = getEndBeat(beat, hand)
-      for (let i = beat; i <= endBeat; i++) {
-        elements.removeChild(elements.getChildByName(`${i}${hand}`))
-        removeHandInfo(i, hand)
-      }
-    } else if ( handMove[handMove.length - 1] === 'P' ) {
-      let startBeat = getStartBeat(beat, hand)
-      let endBeat = getEndBeat(beat, hand)
-      for (let i = startBeat; i <= endBeat; i++) {
-        elements.removeChild(elements.getChildByName(`${i}${hand}`))
-        removeHandInfo(i, hand)
-      }
-    } else if ( handMove[handMove.length - 1] === 'E' ) {
-      let startBeat = getStartBeat(beat, hand)
-      let endBeat = getEndBeat(beat, hand)
-      for (let i = startBeat; i <= endBeat; i++) {
-        elements.removeChild(elements.getChildByName(`${i}${hand}`))
-        removeHandInfo(i, hand)
-      }
+    let startBeat = getStartBeat(beat, hand)
+    let endBeat = getEndBeat(beat, hand)
+    for (let i = startBeat; i <= endBeat; i++) {
+      elements.removeChild(elements.getChildByName(`${i}${hand}`))
+      removeHandInfo(i, hand)
     }
+    // if ( handMove[handMove.length - 1] === 'S' ) { // if it is the starting movement
+    //   let endBeat = getEndBeat(beat, hand)
+    //   for (let i = beat; i <= endBeat; i++) {
+    //     elements.removeChild(elements.getChildByName(`${i}${hand}`))
+    //     removeHandInfo(i, hand)
+    //   }
+    // } else if ( handMove[handMove.length - 1] === 'P' ) {
+    //   let startBeat = getStartBeat(beat, hand)
+    //   let endBeat = getEndBeat(beat, hand)
+    //   for (let i = startBeat; i <= endBeat; i++) {
+    //     elements.removeChild(elements.getChildByName(`${i}${hand}`))
+    //     removeHandInfo(i, hand)
+    //   }
+    // } else if ( handMove[handMove.length - 1] === 'E' ) {
+    //   let startBeat = getStartBeat(beat, hand)
+    //   let endBeat = getEndBeat(beat, hand)
+    //   for (let i = startBeat; i <= endBeat; i++) {
+    //     elements.removeChild(elements.getChildByName(`${i}${hand}`))
+    //     removeHandInfo(i, hand)
+    //   }
+    // }
   }
 }
 

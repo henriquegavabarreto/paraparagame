@@ -14,8 +14,6 @@ function drawNote(x, beat) {
       note.name = `${beat}R`
     }
     elements.addChild(note)
-  } else {
-    console.log('there is a note here already')
   }
 }
 

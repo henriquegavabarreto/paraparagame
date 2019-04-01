@@ -11,7 +11,6 @@ function isValidInsert () {
       let move = danceChart.moves[moveIndex]
       move = move.split(',')
       if ( editor.selectedHand === 'L' && move[2] !== 'X' ) {
-        console.log('There is a note on the left')
         return false
         break
       } else if ( editor.selectedHand === 'R' && move[3] !== 'X' ) {

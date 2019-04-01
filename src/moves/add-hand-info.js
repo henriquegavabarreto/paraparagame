@@ -8,7 +8,7 @@ function addHandInfo () {
   editor.beatArray.forEach((beat, index) => {
     let moveIndex = checkMoves(beat)
     let move = danceChart.moves[moveIndex].split(',')
-    if(moveType === 'S') {
+    if (moveType === 'S') {
       if ( move[2] !== 'X' && move[2].length === 1 ) {
         move[2] = moveType + editor.selectedCircles[0]
         danceChart.moves[moveIndex] = move.join(',')

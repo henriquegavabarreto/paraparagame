@@ -17,7 +17,6 @@ function stopNoteCreation (event) {
         editor.keyStatus.xPressed = false
         beatArray.sort()
         if ( isValidInsert() ) {
-          console.log('Ready to insert move')
           addRequiredMoves(event.key)
           getHandPositions()
         } else {
@@ -30,7 +29,6 @@ function stopNoteCreation (event) {
         editor.keyStatus.zPressed = false
         beatArray.sort()
         if ( isValidInsert() ) {
-          console.log('Ready to insert move')
           addRequiredMoves(event.key)
           getHandPositions()
         } else {

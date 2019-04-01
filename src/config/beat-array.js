@@ -2,8 +2,7 @@ var editor = require('../config/editor.js')
 var songManager = require('../config/song-manager.js')
 
 // adds nearest beat to the array
-function add (beat) {
-  if (!beat) beat = songManager.getNearestBeat()
+function add (beat = songManager.getNearestBeat()) {
   if ( !editor.beatArray.includes(beat) ) editor.beatArray.push(beat)
 }
 
