@@ -5,6 +5,8 @@ var editor = require('../config/editor.js')
 var player = require('../config/youtube.js')
 var danceChart = require('../../data/dance-chart.js')
 var getHandMove = require('./get-hand-move.js')
+var getStartBeat = require('./get-start-beat.js')
+var getEndBeat = require('./get-end-beat.js')
 
 function deleteNote (event) {
   if ( editor.status && player.getState() === 'paused' && !editor.areaSelect ) {
@@ -41,24 +43,6 @@ function searchAndDelete (beat, handMove, hand) {
     }
   }
 }
-
-function getStartBeat (beat, hand) {
-  let handMove = getHandMove (beat, hand)
-  if ( handMove[handMove.length - 1] === 'S' ) {
-    return beat
-  } else {
-    return getStartBeat (beat - 1, hand)
-  }
-}
-
- function getEndBeat (beat, hand) {
-   let handMove = getHandMove (beat, hand)
-   if ( handMove[handMove.length - 1] === 'E' ) {
-     return beat
-   } else {
-     return getEndBeat (beat + 1, hand)
-   }
- }
 
 function removeHandInfo (beat, hand) {
   if ( hand === 'L') { // if left hand

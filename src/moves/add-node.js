@@ -4,6 +4,7 @@ var songManager = require('../config/song-manager.js')
 var getHandMove = require('./get-hand-move.js')
 var checkMoves = require('./check-moves.js')
 var danceChart = require('../../data/dance-chart.js')
+var getStartBeat = require('./get-start-beat.js')
 import { enableCircleClick } from '../stage/circleSelection/enable-circle-click.js'
 
 function addNode (event) {
@@ -19,15 +20,6 @@ function addNode (event) {
 }
 
 var addNodeListener = window.addEventListener('keydown', addNode)
-
-function getStartBeat (beat, hand) {
-  let handMove = getHandMove (beat, hand)
-  if ( handMove[handMove.length - 1] === 'S' ) {
-    return beat
-  } else {
-    return getStartBeat (beat - 1, hand)
-  }
-}
 
 function setHoldNode() {
   let startBeat = getStartBeat(songManager.getNearestBeat(), editor.selectedHand)

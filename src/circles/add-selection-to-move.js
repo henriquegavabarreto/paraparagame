@@ -17,6 +17,7 @@ function addSelectionToMove (position) {
   }
   danceChart.moves[moveIndex] = move.join(',')
   console.log(danceChart.moves)
+  editor.changingMove = false
   disableCircleClick()
 }
 
