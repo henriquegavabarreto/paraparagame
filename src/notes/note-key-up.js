@@ -16,13 +16,13 @@ function stopNoteCreation (event) {
       if ( editor.keyStatus.xPressed === true ) {
         editor.keyStatus.xPressed = false
         beatArray.sort()
-        //FIX: Make a function for validation. If it is a valid insert, add required moves and get hand getHandPositions
-        //If it's not a valid insert, alert 'invalid insert'
         if ( isValidInsert() ) {
+          console.log('Ready to insert move')
           addRequiredMoves(event.key)
           getHandPositions()
         } else {
           removeInvalidNotes()
+          beatArray.clear()
         }
       }
     } else if ( event.key === editor.shortCuts.leftHand) {
@@ -30,10 +30,12 @@ function stopNoteCreation (event) {
         editor.keyStatus.zPressed = false
         beatArray.sort()
         if ( isValidInsert() ) {
+          console.log('Ready to insert move')
           addRequiredMoves(event.key)
           getHandPositions()
         } else {
           removeInvalidNotes()
+          beatArray.clear()
         }
       }
     }

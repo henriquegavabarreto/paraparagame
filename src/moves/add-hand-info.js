@@ -12,42 +12,34 @@ function addHandInfo () {
       if ( move[2] !== 'X' && move[2].length === 1 ) {
         move[2] = moveType + editor.selectedCircles[0]
         danceChart.moves[moveIndex] = move.join(',')
-        console.log(danceChart.moves[moveIndex])
       } else if ( move[3] !== 'X' && move[3].length === 1 ) {
         move[3] = moveType + editor.selectedCircles[0]
         danceChart.moves[moveIndex] = move.join(',')
-        console.log(danceChart.moves[moveIndex])
       }
     } else {
       if(index === 0) {
         if ( move[2] !== 'X' && move[2].length === 1 ) {
           move[2] = moveType + editor.selectedCircles[0] + 'S'
           danceChart.moves[moveIndex] = move.join(',')
-          console.log(danceChart.moves[moveIndex])
         } else if ( move[3] !== 'X' && move[3].length === 1 ) {
           move[3] = moveType + editor.selectedCircles[0] + 'S'
           danceChart.moves[moveIndex] = move.join(',')
-          console.log(danceChart.moves[moveIndex])
         }
       } else if (index > 0 && index < editor.beatArray.length - 1){
         if ( move[2] !== 'X' && move[2].length === 1 ) {
           move[2] = moveType + 'P'
           danceChart.moves[moveIndex] = move.join(',')
-          console.log(danceChart.moves[moveIndex])
         } else if ( move[3] !== 'X' && move[3].length === 1 ) {
           move[3] = moveType + 'P'
           danceChart.moves[moveIndex] = move.join(',')
-          console.log(danceChart.moves[moveIndex])
         }
       } else if (index === editor.beatArray.length - 1){
         if ( move[2] !== 'X' && move[2].length === 1 ) {
           move[2] = moveType + editor.selectedCircles[1] + 'E'
           danceChart.moves[moveIndex] = move.join(',')
-          console.log(danceChart.moves[moveIndex])
         } else if ( move[3] !== 'X' && move[3].length === 1 ) {
           move[3] = moveType + editor.selectedCircles[1] + 'E'
           danceChart.moves[moveIndex] = move.join(',')
-          console.log(danceChart.moves[moveIndex])
         }
       }
     }
