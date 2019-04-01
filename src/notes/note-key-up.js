@@ -2,8 +2,8 @@ var beatArray = require('../config/beat-array.js')
 var editor = require('../config/editor.js')
 var player = require('../config/youtube.js')
 var addMove = require('../moves/add-move.js')
-var danceChart = require('../../data/dance-chart.js')
-import { getHandPositions } from '../circles/get-hand-positions.js'
+var songManager = require('../config/song-manager.js')
+import { enableCircleClick } from '../stage/circleSelection/enable-circle-click.js'
 import { isValidInsert } from './is-valid-insert.js'
 import { removeInvalidNotes } from './remove-invalid-notes.js'
 
@@ -18,7 +18,8 @@ function stopNoteCreation (event) {
         beatArray.sort()
         if ( isValidInsert() ) {
           addRequiredMoves(event.key)
-          getHandPositions()
+          player.seek(songManager.getBeatTime(editor.beatArray[0]))
+          enableCircleClick()
         } else {
           removeInvalidNotes()
           beatArray.clear()
@@ -30,7 +31,8 @@ function stopNoteCreation (event) {
         beatArray.sort()
         if ( isValidInsert() ) {
           addRequiredMoves(event.key)
-          getHandPositions()
+          player.seek(songManager.getBeatTime(editor.beatArray[0]))
+          enableCircleClick()
         } else {
           removeInvalidNotes()
           beatArray.clear()

@@ -28,6 +28,8 @@ import { noteKeyUp } from './notes/note-key-up.js'
 
 import { deleteMove } from './moves/delete-move.js'
 
+import { addNodeListener } from './moves/add-node.js'
+
 setBackgroundChart()
 
 setSelectionCircles()

@@ -2,6 +2,7 @@ import * as PIXI from 'pixi.js'
 import { circleSelection } from '../../config/containers.js'
 import { grid } from '../../config/grid.js'
 import { addSelectionToArray } from '../../circles/add-selection-to-array.js'
+import { addSelectionToMove } from '../../circles/add-selection-to-move.js'
 var editor = require('../../config/editor.js')
 
 function setSelectionCircles () {
@@ -30,7 +31,11 @@ function setSelectionCircles () {
 
     circle.on('mousedown', (event) => {
       circle.alpha = 1
-      addSelectionToArray(circle.name)
+      if (editor.creatingMove) {
+        addSelectionToArray(circle.name)
+      } else if (editor.changingMove) {
+        addSelectionToMove(circle.name)
+      }
     })
 
     circleSelection.addChild(circle)

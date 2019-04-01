@@ -18,6 +18,7 @@ function addSelectionToArray (circle) {
     disableCircleClick()
     clearSelectedCircles()
     beatArray.clear()
+    editor.creatingMove = false
   }
 }
 

@@ -6,6 +6,7 @@ var player = require('../config/youtube.js')
 function startNoteCreation (event) {
   if ( editor.status && player.getState() === 'paused' && !editor.areaSelect ) {
     if ( event.key === editor.shortCuts.rightHand) {
+      editor.creatingMove = true
       if ( editor.keyStatus.xPressed === false && editor.keyStatus.zPressed === false ) {
         editor.selectedHand = 'R'
         editor.keyStatus.xPressed = true
@@ -13,6 +14,7 @@ function startNoteCreation (event) {
         createNote(event.key)
       }
     } else if ( event.key === editor.shortCuts.leftHand) {
+      editor.creatingMove = true
       if ( editor.keyStatus.zPressed === false && editor.keyStatus.xPressed === false ) {
         editor.selectedHand = 'L'
         editor.keyStatus.zPressed = true

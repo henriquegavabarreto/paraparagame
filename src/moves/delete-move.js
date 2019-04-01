@@ -39,27 +39,6 @@ function searchAndDelete (beat, handMove, hand) {
       elements.removeChild(elements.getChildByName(`${i}${hand}`))
       removeHandInfo(i, hand)
     }
-    // if ( handMove[handMove.length - 1] === 'S' ) { // if it is the starting movement
-    //   let endBeat = getEndBeat(beat, hand)
-    //   for (let i = beat; i <= endBeat; i++) {
-    //     elements.removeChild(elements.getChildByName(`${i}${hand}`))
-    //     removeHandInfo(i, hand)
-    //   }
-    // } else if ( handMove[handMove.length - 1] === 'P' ) {
-    //   let startBeat = getStartBeat(beat, hand)
-    //   let endBeat = getEndBeat(beat, hand)
-    //   for (let i = startBeat; i <= endBeat; i++) {
-    //     elements.removeChild(elements.getChildByName(`${i}${hand}`))
-    //     removeHandInfo(i, hand)
-    //   }
-    // } else if ( handMove[handMove.length - 1] === 'E' ) {
-    //   let startBeat = getStartBeat(beat, hand)
-    //   let endBeat = getEndBeat(beat, hand)
-    //   for (let i = startBeat; i <= endBeat; i++) {
-    //     elements.removeChild(elements.getChildByName(`${i}${hand}`))
-    //     removeHandInfo(i, hand)
-    //   }
-    // }
   }
 }
 
@@ -71,6 +50,7 @@ function getStartBeat (beat, hand) {
     return getStartBeat (beat - 1, hand)
   }
 }
+
  function getEndBeat (beat, hand) {
    let handMove = getHandMove (beat, hand)
    if ( handMove[handMove.length - 1] === 'E' ) {
