@@ -5,8 +5,6 @@ var editor = require('../../config/editor.js')
 import { enableCircleClick } from '../circleSelection/enable-circle-click.js'
 var addMove = require('../../moves/add-move.js')
 
-// NOTE: Check if adding checkChartPosition to the drawNote function wouldn't be better
-
 function createNote (pressedKey, beat) {
   let x = 22 // default x to left hand
   if (pressedKey) {

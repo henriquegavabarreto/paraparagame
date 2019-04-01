@@ -14,7 +14,6 @@ function redrawNotes (offsetDifference, bpm) {
     move[0] = parseFloat(move[0]) + Math.round((offsetDifference/(60/bpm)) * 4) // change moves beat so they stay in the same time according to the song
     if (move[2] !== 'X') {
       drawNote(22, move[0])
-      console.log(move[0])
       tintNotes(move[0], 'L', move[2][0])
     }
     if (move[3] !== 'X') {

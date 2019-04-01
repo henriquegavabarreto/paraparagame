@@ -4,6 +4,8 @@ var player = require('../config/youtube.js')
 var addMove = require('../moves/add-move.js')
 var danceChart = require('../../data/dance-chart.js')
 import { getHandPositions } from '../circles/get-hand-positions.js'
+import { isValidInsert } from './is-valid-insert.js'
+import { removeInvalidNotes } from './remove-invalid-notes.js'
 
 // FIX: If there is a note already in the end of the path, don't add any notes or moves - when the key is released trigger an alert
 // It may be needed to have two arrays, one for valid spots for creation and another with invalid spots
@@ -14,15 +16,25 @@ function stopNoteCreation (event) {
       if ( editor.keyStatus.xPressed === true ) {
         editor.keyStatus.xPressed = false
         beatArray.sort()
-        addRequiredMoves(event.key)
-        getHandPositions()
+        //FIX: Make a function for validation. If it is a valid insert, add required moves and get hand getHandPositions
+        //If it's not a valid insert, alert 'invalid insert'
+        if ( isValidInsert() ) {
+          addRequiredMoves(event.key)
+          getHandPositions()
+        } else {
+          removeInvalidNotes()
+        }
       }
     } else if ( event.key === editor.shortCuts.leftHand) {
       if ( editor.keyStatus.zPressed === true ) {
         editor.keyStatus.zPressed = false
         beatArray.sort()
-        addRequiredMoves(event.key)
-        getHandPositions()
+        if ( isValidInsert() ) {
+          addRequiredMoves(event.key)
+          getHandPositions()
+        } else {
+          removeInvalidNotes()
+        }
       }
     }
   }
@@ -36,5 +48,4 @@ function addRequiredMoves (key) {
   editor.beatArray.forEach(beat => {
     addMove(key, beat)
   })
-  console.log(danceChart.moves)
 }
