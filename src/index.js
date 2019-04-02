@@ -1,6 +1,8 @@
 import app from './config/pixi.js'
+import { setFixedGraphics } from './stage/fixedGraphics/set-fixed-graphics.js'
 import { setBackgroundChart } from './stage/chart/set-background-chart.js'
 import { setSelectionCircles } from './stage/circleSelection/set-selection-circles.js'
+
 
 var showTimingOptions = require('./listeners/menus/show-timing-modal.js')
 import { saveTimingOptions } from './listeners/menus/save-timing-options.js'
@@ -29,6 +31,8 @@ import { noteKeyUp } from './notes/note-key-up.js'
 import { deleteMove } from './moves/delete-move.js'
 
 import { addNodeListener } from './moves/add-node.js'
+
+setFixedGraphics()
 
 setBackgroundChart()
 
