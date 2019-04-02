@@ -17,9 +17,9 @@ function saveOptions () {
 }
 
 function validateSong (titleInput, artistInput, videoIdInput) {
-  if (videoIdInput.length === 11) { // This should check if the ID is valid on the API, though
+  if (videoIdInput.length === 11 || videoIdInput.length === 0) { // This should check if the ID is valid on the API, though
 
-    if (videoIdInput !== danceChart.info.video.videoId) {
+    if (videoIdInput !== danceChart.info.video.videoId && videoIdInput.length !== 0) {
       player.load(videoIdInput)
       player.play()
       setTimeout(function () {
