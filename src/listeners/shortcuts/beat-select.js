@@ -39,14 +39,14 @@ function createNoteWhenSelected (beats) {
       setTimeout(function () {
         createNote()
         beatArray.add()
-      }, 80)
+      }, 150)
     } else if (beats === 4) {
       for(let i = 0; i <= 3; i++) { // adds notes in between
         setTimeout(function () {
           let beatToAdd = songManager.getNearestBeat() - i
           createNote(pressedKey, beatToAdd)
           beatArray.add(beatToAdd)
-        }, 80)
+        }, 150)
       }
     } else if (beats === -4) {
       for(let i = 0; i <= 3; i++) {
@@ -54,7 +54,7 @@ function createNoteWhenSelected (beats) {
           let beatToAdd = songManager.getNearestBeat() + i
           createNote(pressedKey, beatToAdd)
           beatArray.add(beatToAdd)
-        }, 80)
+        }, 150)
       }
     }
   }
