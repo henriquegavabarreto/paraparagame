@@ -1,6 +1,6 @@
-var player = require('../config/youtube.js')
-var songManager = require('../config/song-manager.js')
-var editor = require('../config/editor.js')
+var player = require('../../config/youtube.js')
+var songManager = require('../../config/song-manager.js')
+var editor = require('../../config/editor.js')
 
 seekInput = document.getElementById('beat-to-seek')
 

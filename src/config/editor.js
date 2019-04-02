@@ -1,6 +1,8 @@
 var editorConfig = {
   status: false,
   areaSelect: false,
+  creatingMove: false,
+  changingMove: false,
   shortCuts: {
     play: 'p',
     slower: ',',
@@ -12,6 +14,13 @@ var editorConfig = {
     leftHand: 'z',
     rightHand: 'x'
   },
+  keyStatus: {
+    zPressed: false,
+    xPressed: false
+  },
+  beatArray: [],
+  selectedCircles: [],
+  selectedHand: '',
   adjustments: {
     numbers: 4
   }

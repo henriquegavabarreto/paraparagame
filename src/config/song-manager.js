@@ -30,6 +30,11 @@ function getNearestBeatTime (t = 0) {
   return nearestBeatTime
 }
 
+function getBeatTime(beat) {
+  let beatTime = (( beat / 4 ) * getTempo()) + song.offset
+  return beatTime
+}
+
 function getLastBeatTime () {
   for( let lastBeatTime = 0; lastBeatTime <= player.getDuration(); lastBeatTime += getTempo() ) {
     if (lastBeatTime + getTempo() > player.getDuration()) {
@@ -44,4 +49,5 @@ exports.getCurrentRoundBeat = getCurrentRoundBeat
 exports.getCurrentQuarterBeat = getCurrentQuarterBeat
 exports.getNearestBeat = getNearestBeat
 exports.getNearestBeatTime = getNearestBeatTime
+exports.getBeatTime = getBeatTime
 exports.getLastBeatTime = getLastBeatTime

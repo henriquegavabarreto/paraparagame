@@ -1,5 +1,5 @@
-var player = require('../config/youtube.js')
-var editor = require('../config/editor.js')
+var player = require('../../config/youtube.js')
+var editor = require('../../config/editor.js')
 
 function playPause () {
   if ( editor.status && !editor.areaSelect ){
