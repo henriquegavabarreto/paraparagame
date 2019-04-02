@@ -60,10 +60,10 @@ Rhythm dance game based on the japanese ParaPara dance using pixi.js, posenet an
 2. Fill all the necessary information on Song Options
 3. Fill all the necessary information on Timing
 4. Start inserting moves on the chart
-⋅⋅* For a Sharp Move, that will be checked just one time in the game at the specific beat that it was inserted on, press `Z` to create a left hand move or `X` to create a right hand move
-⋅⋅* Select the position on which the move should be checked clicking in one of the circles on the top of the video
+  * For a Sharp Move, that will be checked just one time in the game at the specific beat that it was inserted on, press `Z` to create a left hand move or `X` to create a right hand move
+  * Select the position on which the move should be checked clicking in one of the circles on the top of the video
 
-⋅⋅* For a Hold Move or Motion Move, that can be checked two times or more, hold `Z` for left hand or `X` for right hand on the beat on which the move starts and press the down arrow until the beat which the move should end. After that, release `Z` or `X`.
-⋅⋅* Now it will be necessary that you select two positions on the circle grid. Selecting two times the same position will create a Hold Move and selecting different positions will create a Motion Move
+  * For a Hold Move or Motion Move, that can be checked two times or more, hold `Z` for left hand or `X` for right hand on the beat on which the move starts and press the down arrow until the beat which the move should end. After that, release `Z` or `X`.
+  * Now it will be necessary that you select two positions on the circle grid. Selecting two times the same position will create a Hold Move and selecting different positions will create a Motion Move
 5. If you have created a Hold Move or Motion Move, you can create nodes by selecting the beat and pressing `A` for left hand or `S` for right hand. Nodes are a way to create one more detection. Hold nodes will create a new detection on that note considering the same position as the start and end previously created. Motion nodes will require you to select a position, so there are no restriction to Motion Moves (beside that thay can't start and end at the same position).
 6. If you made a mistake, press `Q` for left hand or `W` for right hand deletion
