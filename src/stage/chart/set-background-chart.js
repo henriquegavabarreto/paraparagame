@@ -1,6 +1,8 @@
 import * as PIXI from 'pixi.js'
 import { backgroundChart } from '../../config/containers.js'
 
+// add chart movement
+
 function setBackgroundChart () {
   setStaff()
 
