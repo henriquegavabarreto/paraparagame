@@ -1,5 +1,5 @@
 import * as PIXI from 'pixi.js'
-import { backgroundChart, elements, circleSelection, guideNumbers } from './containers.js'
+import { backgroundChart, elements, circleSelection, guideNumbers, fixedGraphics } from './containers.js'
 
 var pixiConfig = {
   transparent: true,
@@ -22,6 +22,7 @@ export default app
 function setContainers () {
   app.stage.addChild(backgroundChart)
   app.stage.addChild(elements)
+  app.stage.addChild(fixedGraphics)
   app.stage.addChild(circleSelection)
   app.stage.addChild(guideNumbers)
 }
