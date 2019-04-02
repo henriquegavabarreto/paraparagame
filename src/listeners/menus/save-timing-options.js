@@ -1,9 +1,9 @@
 var danceChart = require('../../../data/dance-chart.js')
 var editor = require('../../config/editor.js')
 var player = require('../../config/youtube.js')
-
 import { drawGuideNumbers } from '../../stage/guideNumbers/draw-guide-numbers.js'
 import { redrawNotes } from '../../stage/elements/redraw-notes.js'
+import { redrawStaff } from '../../stage/chart/redraw-staff.js'
 
 var saveTimingButton = document.getElementById('timing-submitter')
 var timingModal = document.getElementById('timing-modal')
@@ -38,6 +38,7 @@ function validateTiming (startInput, endInput, offsetInput, bpmInput) {
 
     if ( shouldDrawNumbers ) {
       drawGuideNumbers()
+      redrawStaff()
       redrawNotes(offsetDifference, danceChart.info.song.bpm)
     }
 
