@@ -13,23 +13,26 @@ function saveToDatabase () {
     var ref = firebase.database().ref('danceCharts')
     ref.once('value').then(function (data) {
       let charts = data.val()
-      for(var chartId in charts) {
-        if(charts[chartId].info.video.videoId === danceChart.info.video.videoId) { // TODO: Should check if danceChart.info.author is the user
-          let overwrite = confirm('There\'s already a dance chart to this video. Do you want to overwrite it?')
-          if (overwrite){
-            console.log('Overwrite chart')
-            danceChart.info.updatedAt = getSaveTime()
-            ref.child(`${chartId}`).set(danceChart)
-          } else {
-            console.log('Don\'t overwrite')
-          }
+      let chartId = getChartId(charts)
+      if ( chartId !== -1 ) {
+        let overwrite = confirm('There\'s already a dance chart to this video. Do you want to overwrite it?')
+        if (overwrite){
+          console.log('Overwrite chart')
+          var updates = {}
+          updates['/info/song'] = danceChart.info.song
+          updates['/info/video'] = danceChart.info.video
+          updates['/info/updatedAt'] = getSaveTime()
+          updates['/moves'] = danceChart.moves
+          ref.child(`${chartId}`).update(updates)
         } else {
-          console.log('Save unique chart')
-          // TODO: add info to the chart
-          // danceChart.info.author = userId(?)
-          danceChart.info.createdAt = getSaveTime()
-          ref.push(danceChart)
+          console.log('Don\'t overwrite')
         }
+      } else {
+        console.log('Save unique chart')
+        // danceChart.info.author = userId(?)
+        let newChartData = danceChart
+        newChartData.info.createdAt = getSaveTime()
+        ref.push(newChartData)
       }
     })
   }
@@ -38,3 +41,14 @@ function saveToDatabase () {
 var saveDanceChartListener = saveDanceChartButton.addEventListener('click', saveToDatabase)
 
 module.exports = saveDanceChartListener
+
+function getChartId (charts) {
+  let id = -1
+  for(var chartId in charts) {
+    if(charts[chartId].info.video.videoId === danceChart.info.video.videoId) { // TODO: Should check if danceChart.info.author is the user
+      id = chartId
+      break
+    }
+  }
+  return id
+}
