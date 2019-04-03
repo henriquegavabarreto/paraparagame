@@ -41,7 +41,7 @@ Rhythm dance game based on the japanese ParaPara dance using pixi.js, posenet an
 
 * Song Title - Title of the song
 * Artist - Who performs the song
-* Youtube Video Id - Video Id found at the end of the video link after watch?v= (as eN31qe-Hvzo in https://www.youtube.com/watch?v=eN31qe-Hvzo)
+* Youtube Video Id - Video Id found at the end of the video link after watch?v= (as `eN31qe-Hvzo` in https://www.youtube.com/watch?v=eN31qe-Hvzo)
 
 #### Menu
 
