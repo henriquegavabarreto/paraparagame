@@ -1,8 +1,8 @@
+var firebase = require('./config/firebase.js')
 import app from './config/pixi.js'
 import { setFixedGraphics } from './stage/fixedGraphics/set-fixed-graphics.js'
 import { setBackgroundChart } from './stage/chart/set-background-chart.js'
 import { setSelectionCircles } from './stage/circleSelection/set-selection-circles.js'
-
 
 var showTimingOptions = require('./listeners/menus/show-timing-modal.js')
 import { saveTimingOptions } from './listeners/menus/save-timing-options.js'
@@ -12,6 +12,8 @@ import { saveSongOptions } from './listeners/menus/save-song-options.js'
 
 var showMenuOptions = require('./listeners/menus/show-menu-modal.js')
 import { saveMenuOptions } from './listeners/menus/save-menu-options.js'
+
+var saveDanceChartListener = require('./danceChart/save-dance-chart-to-database.js')
 
 var playShortCut = require('./listeners/player/shortcuts/play.js')
 var adjustPlaybackRate = require('./listeners/player/shortcuts/playback-rate.js')
