@@ -14,7 +14,7 @@ function redrawStaff () {
   for( let i = videoStart; i <= videoEnd + songManager.getTempo(); i += songManager.getTempo() ) {
     let guideNumber = Math.round( ( i - song.offset ) / songManager.getTempo() )
 
-    let staff = new PIXI.Sprite.fromImage('../assets/staff.png')
+    let staff = new PIXI.Sprite.fromImage('./../../../assets/staff.png')
     staff.x = 20
     staff.y = 56 * guideNumber
     staff.scale.x = 0.9

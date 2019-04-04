@@ -7,8 +7,8 @@ var pixiConfig = {
   resolution: 2,
   antialias: true,
   clearBeforeRender: true,
-  width: 1280,
-  height: 780
+  width: window.innerWidth,
+  height: window.innerHeight
 }
 
 var app = new PIXI.Application(pixiConfig)

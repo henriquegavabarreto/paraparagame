@@ -3,6 +3,7 @@ var danceChart = require('../../data/dance-chart.js')
 var getHandMove = require('../moves/get-hand-move.js')
 var songManager = require('../config/song-manager.js')
 var editor = require('../config/editor.js')
+var showMoveInfo = require('../moves/show-move-info.js')
 import { disableCircleClick } from '../stage/circleSelection/disable-circle-click.js'
 
 function addSelectionToMove (position) {
@@ -19,6 +20,7 @@ function addSelectionToMove (position) {
   console.log(danceChart.moves)
   editor.changingMove = false
   disableCircleClick()
+  setTimeout(showMoveInfo, 150)
 }
 
 export { addSelectionToMove }

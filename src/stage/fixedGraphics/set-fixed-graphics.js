@@ -10,7 +10,7 @@ function setFixedGraphics () {
 }
 
 function setGuideline () {
-  let guideline = PIXI.Sprite.fromImage('../assets/guideline.png')
+  let guideline = PIXI.Sprite.fromImage('./../../../assets/guideline.png')
   guideline.x = 6
   guideline.y = 59
   guideline.scale.x = 0.95
@@ -26,8 +26,8 @@ function setVideoText () {
     fontWeight: 500
   })
 
-  videoText.x = 225
-  videoText.y = 70
+  videoText.x = window.innerWidth/6.5
+  videoText.y = window.innerHeight/11.8
   videoText.name = 'videoText'
 
   videoText.cacheAsBitmap = true
@@ -47,7 +47,7 @@ function setTimeText () {
   })
 
   timeText.x = videoText.x + videoText.width + 5
-  timeText.y = 70
+  timeText.y = videoText.y
   timeText.name = 'timeText'
 
   fixedGraphics.addChild(timeText)
