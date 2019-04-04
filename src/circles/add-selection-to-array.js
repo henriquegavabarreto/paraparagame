@@ -5,6 +5,7 @@ var songManager = require('../config/song-manager.js')
 var clearSelectedCircles = require('./clear-selected-circles.js')
 import { disableCircleClick } from '../stage/circleSelection/disable-circle-click.js'
 var addHandInfo = require('../moves/add-hand-info.js')
+var showMoveInfo = require('../moves/show-move-info.js')
 import { tintNotes } from '../notes/tint-notes.js'
 
 function addSelectionToArray (circle) {
@@ -19,6 +20,7 @@ function addSelectionToArray (circle) {
     clearSelectedCircles()
     beatArray.clear()
     editor.creatingMove = false
+    setTimeout(showMoveInfo, 150)
   }
 }
 

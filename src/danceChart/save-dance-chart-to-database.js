@@ -24,16 +24,15 @@ function saveToDatabase () {
           updates['/info/updatedAt'] = getSaveTime()
           updates['/moves'] = danceChart.moves
           ref.child(`${chartId}`).update(updates)
-
           closeMenu()
         } else {
           console.log('Don\'t overwrite')
         }
       } else {
         console.log('Save unique chart')
-        // danceChart.info.author = userId(?)
         let newChartData = danceChart
         newChartData.info.createdAt = getSaveTime()
+        // newChartData.info.author = userId(?)
         ref.push(newChartData)
         closeMenu()
       }
