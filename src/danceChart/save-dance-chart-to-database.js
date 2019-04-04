@@ -24,6 +24,8 @@ function saveToDatabase () {
           updates['/info/updatedAt'] = getSaveTime()
           updates['/moves'] = danceChart.moves
           ref.child(`${chartId}`).update(updates)
+
+          closeMenu()
         } else {
           console.log('Don\'t overwrite')
         }
@@ -33,6 +35,7 @@ function saveToDatabase () {
         let newChartData = danceChart
         newChartData.info.createdAt = getSaveTime()
         ref.push(newChartData)
+        closeMenu()
       }
     })
   }
@@ -51,4 +54,8 @@ function getChartId (charts) {
     }
   }
   return id
+}
+
+function closeMenu () {
+  document.getElementById('menu-modal').classList.toggle("show-menu-options")
 }
