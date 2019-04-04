@@ -74,12 +74,19 @@ body {
   height: 100%;
 }
 
-.ring-options select {
-  margin-top: 10%;
-  margin-bottom: 10%;
-  width: 70%;
-  height: 5%;
+.info-title {
+  font-weight: bold;
+  margin-top: 35%;
+  font-size: 20px;
 }
+
+.info-div {
+  border: 2px solid white;
+  padding: 20px;
+}
+
+/* #right-hand-move-info, #left-hand-move-info {
+} */
 
 .bottom-nav {
   display: flex;
