@@ -10,7 +10,7 @@ function setFixedGraphics () {
 }
 
 function setGuideline () {
-  let guideline = PIXI.Sprite.fromImage('./../../../assets/guideline.png')
+  let guideline = PIXI.Sprite.fromImage('https://henriquegavabarreto.github.io/paraparagame/assets/guideline.png')
   guideline.x = 6
   guideline.y = 59
   guideline.scale.x = 0.95
