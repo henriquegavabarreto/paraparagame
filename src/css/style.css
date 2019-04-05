@@ -43,7 +43,6 @@ body {
   background-color: #000;
   position: absolute;
   top: 0;
-  left: 15%;
   right: 0;
   height: 8%;
   width: 85%;
@@ -58,7 +57,6 @@ body {
   align-items: center;
   top: 8%;
   right: 0;
-  left: 85%;
   height: 92%;
   width: 15%;
   z-index: 1;
@@ -85,9 +83,6 @@ body {
   padding: 20px;
 }
 
-/* #right-hand-move-info, #left-hand-move-info {
-} */
-
 .bottom-nav {
   display: flex;
   justify-content: center;
@@ -95,7 +90,6 @@ body {
   background-color: #000;
   position: absolute;
   left: 15%;
-  top: 92%;
   right: 15%;
   bottom: 0;
   height: 8%;

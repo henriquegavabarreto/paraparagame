@@ -1,5 +1,6 @@
 var firebase = require('./config/firebase.js')
 import app from './config/pixi.js'
+import resizeListener from './config/resize.js'
 import { setFixedGraphics } from './stage/fixedGraphics/set-fixed-graphics.js'
 import { setBackgroundChart } from './stage/chart/set-background-chart.js'
 import { setSelectionCircles } from './stage/circleSelection/set-selection-circles.js'

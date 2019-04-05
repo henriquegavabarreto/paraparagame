@@ -1,5 +1,6 @@
 import * as PIXI from 'pixi.js'
 import { backgroundChart, elements, circleSelection, guideNumbers, fixedGraphics } from './containers.js'
+var gameConfig = require('./game-config.js')
 
 var pixiConfig = {
   transparent: true,
@@ -7,8 +8,8 @@ var pixiConfig = {
   resolution: 2,
   antialias: true,
   clearBeforeRender: true,
-  width: window.innerWidth,
-  height: window.innerHeight
+  width: gameConfig.width,
+  height: gameConfig.height
 }
 
 var app = new PIXI.Application(pixiConfig)

@@ -1,5 +1,6 @@
 import * as PIXI from 'pixi.js'
 import { fixedGraphics } from '../../config/containers.js'
+var gameConfig = require('../../config/game-config.js')
 
 function setFixedGraphics () {
   setGuideline()
@@ -26,8 +27,8 @@ function setVideoText () {
     fontWeight: 500
   })
 
-  videoText.x = window.innerWidth/6.5
-  videoText.y = window.innerHeight/11.8
+  videoText.x = gameConfig.width/5.8
+  videoText.y = gameConfig.height/11.8
   videoText.name = 'videoText'
 
   videoText.cacheAsBitmap = true
