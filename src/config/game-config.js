@@ -10,6 +10,7 @@ var gameConfig = {
     size: 80,
     lineWidth: 12
   },
+  advanceSpawn: 4
 }
 
 module.exports = gameConfig
