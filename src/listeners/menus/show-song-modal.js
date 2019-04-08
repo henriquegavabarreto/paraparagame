@@ -11,9 +11,9 @@ function toggleModal() {
       player.pause()
     }
     songModal.classList.toggle("show-song-options")
-    document.getElementById('song-title').value = danceChart.info.song.title
-    document.getElementById('song-artist').value = danceChart.info.song.artist
-    document.getElementById('video-id').value = danceChart.info.video.videoId
+    document.getElementById('song-title').value = danceChart.title
+    document.getElementById('song-artist').value = danceChart.artist
+    document.getElementById('video-id').value = danceChart.videoId
 
     editor.status = false
   }

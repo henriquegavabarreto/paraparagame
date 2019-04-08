@@ -26,20 +26,20 @@ function validateTiming (startInput, endInput, offsetInput, bpmInput) {
     let shouldDrawNumbers = false
     let offsetDifference
 
-    if ( ( danceChart.info.song.offset != offsetInput || danceChart.info.song.bpm != bpmInput ) && player.getDuration() > 0) {
+    if ( ( danceChart.offset != offsetInput || danceChart.bpm != bpmInput ) && player.getDuration() > 0) {
       shouldDrawNumbers = true
-      offsetDifference = danceChart.info.song.offset - offsetInput
+      offsetDifference = danceChart.offset - offsetInput
     }
 
-    danceChart.info.video.start = parseFloat(startInput)
-    danceChart.info.video.end = parseFloat(endInput)
-    danceChart.info.song.offset = parseFloat(offsetInput)
-    danceChart.info.song.bpm = parseFloat(bpmInput)
+    danceChart.videoStart = parseFloat(startInput)
+    danceChart.videoEnd = parseFloat(endInput)
+    danceChart.offset = parseFloat(offsetInput)
+    danceChart.bpm = parseFloat(bpmInput)
 
     if ( shouldDrawNumbers ) {
       drawGuideNumbers()
       redrawStaff()
-      redrawNotes(offsetDifference, danceChart.info.song.bpm)
+      redrawNotes(offsetDifference, danceChart.bpm)
     }
 
     document.getElementById('invalid-timing-warning').style.display = 'none'
