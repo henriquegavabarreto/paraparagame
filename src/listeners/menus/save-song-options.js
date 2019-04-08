@@ -42,9 +42,6 @@ function validateSong (titleInput, artistInput, videoIdInput) {
     songModal.classList.toggle("show-song-options")
 
     editor.status = true
-
-    console.log(danceChart)
-
   } else {
     document.getElementById('invalid-song-warning').style.display = 'block'
   }

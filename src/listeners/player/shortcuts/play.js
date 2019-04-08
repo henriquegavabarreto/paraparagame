@@ -1,7 +1,7 @@
 var player = require('../../../config/youtube.js')
 var editor = require('../../../config/editor.js')
 var showMoveInfo = require('../../../moves/show-move-info.js')
-import drawStaticCues from '../../../stage/cueContainer/draw-static-cues.js'
+import drawCues from '../../../stage/cueContainer/draw-cues.js'
 
 function play (event) {
   if (editor.status && !editor.areaSelect ) {
@@ -10,7 +10,7 @@ function play (event) {
         player.pause()
         setTimeout(function () {
           showMoveInfo()
-          drawStaticCues()
+          drawCues()
         }, 150)
       } else {
         player.play()

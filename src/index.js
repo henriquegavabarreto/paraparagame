@@ -4,6 +4,7 @@ import resizeListener from './config/resize.js'
 import { setFixedGraphics } from './stage/fixedGraphics/set-fixed-graphics.js'
 import { setBackgroundChart } from './stage/chart/set-background-chart.js'
 import { setSelectionCircles } from './stage/circleSelection/set-selection-circles.js'
+import { addCueGraphics } from './stage/cueContainer/add-cue-graphics.js'
 
 var showTimingOptions = require('./listeners/menus/show-timing-modal.js')
 import { saveTimingOptions } from './listeners/menus/save-timing-options.js'
@@ -40,3 +41,5 @@ setFixedGraphics()
 setBackgroundChart()
 
 setSelectionCircles()
+
+addCueGraphics()

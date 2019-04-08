@@ -6,7 +6,7 @@ var clearSelectedCircles = require('./clear-selected-circles.js')
 import { disableCircleClick } from '../stage/circleSelection/disable-circle-click.js'
 var addHandInfo = require('../moves/add-hand-info.js')
 var showMoveInfo = require('../moves/show-move-info.js')
-import drawStaticCues from '../stage/cueContainer/draw-static-cues.js'
+import drawCues from '../stage/cueContainer/draw-cues.js'
 import { tintNotes } from '../notes/tint-notes.js'
 
 function addSelectionToArray (circle) {
@@ -23,7 +23,7 @@ function addSelectionToArray (circle) {
     editor.creatingMove = false
     setTimeout(function () {
       showMoveInfo()
-      drawStaticCues()
+      drawCues()
     }, 150)
   }
 }

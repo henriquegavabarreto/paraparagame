@@ -5,7 +5,7 @@ var songManager = require('../config/song-manager.js')
 var editor = require('../config/editor.js')
 var showMoveInfo = require('../moves/show-move-info.js')
 import { disableCircleClick } from '../stage/circleSelection/disable-circle-click.js'
-import drawStaticCues from '../stage/cueContainer/draw-static-cues.js'
+import drawCues from '../stage/cueContainer/draw-cues.js'
 
 function addSelectionToMove (position) {
   let handMove = getHandMove(songManager.getNearestBeat(), editor.selectedHand)
@@ -22,7 +22,7 @@ function addSelectionToMove (position) {
   disableCircleClick()
   setTimeout(function () {
     showMoveInfo()
-    drawStaticCues()
+    drawCues()
   }, 150)
 }
 
