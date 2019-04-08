@@ -1,15 +1,40 @@
 var gameConfig = require('../../config/game-config.js')
-import grid from '../../config/grid.js'
 import { cueContainer } from '../../config/containers.js'
 import * as PIXI from 'pixi.js'
+import drawCue from './draw-cue.js'
+var danceChart = require('../../../data/dance-chart.js')
 var songManager = require('../../config/song-manager.js')
-var player = require('../../config/youtube.js')
 
-function drawCues() {
-
+function drawStaticCues () {
+  if(cueContainer.getChildByName('staticCues')) cueContainer.removeChild(cueContainer.getChildByName('staticCues'))
+  let movesToDraw = []
+  danceChart.moves.forEach((move) => {
+    move = move.split(',')
+    let beat = move[0]
+    let proportion = (gameConfig.advanceSpawn-(beat-songManager.getCurrentQuarterBeat()))/gameConfig.advanceSpawn
+    if (proportion > 0 && proportion <= 1) {
+      movesToDraw.push(move)
+    }
+  })
+  if (movesToDraw.length > 0) {
+    var staticCues = new PIXI.Graphics()
+    movesToDraw.forEach((move) => {
+      let beat = move[0]
+      let leftHand = move[2]
+      let rightHand = move[3]
+      let proportion = (gameConfig.advanceSpawn-(beat-songManager.getCurrentQuarterBeat()))/gameConfig.advanceSpawn
+      let size = gameConfig.cue.size * proportion
+      if (rightHand !== 'X') drawCue(rightHand, size, staticCues)
+      if (leftHand !== 'X') drawCue(leftHand, size, staticCues)
+    })
+    staticCues.name = 'staticCues'
+    cueContainer.addChild(staticCues)
+  }
 }
 
-export default drawCues
+export default drawStaticCues
+
+
 
 // class Cue {
 //

@@ -21,7 +21,7 @@ var adjustPlaybackRate = require('./listeners/player/shortcuts/playback-rate.js'
 
 var slowerButton = require('./listeners/player/adjust-playback-rate.js').slower
 var fasterButton = require('./listeners/player/adjust-playback-rate.js').faster
-var playButton = require('./listeners/player/play.js')
+import playButton from './listeners/player/play.js'
 var onPaused = require('./listeners/player/on-pause.js')
 
 var seekInput = require('./listeners/player/seek-input.js')
