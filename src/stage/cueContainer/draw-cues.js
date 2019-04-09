@@ -3,18 +3,18 @@ import { cueContainer } from '../../config/containers.js'
 import drawCue from './draw-cue.js'
 var danceChart = require('../../../data/dance-chart.js')
 var songManager = require('../../config/song-manager.js')
+import drawHoldCues from './draw-hold-cues.js'
 
 function drawCues () {
   var cues = cueContainer.getChildByName('cues')
   cues.clear()
   let movesToDraw = []
+  let holdsToDraw = []
   danceChart.moves.forEach((move) => {
     move = move.split(',')
     let beat = move[0]
-    let proportion = (gameConfig.advanceSpawn-(beat-songManager.getCurrentQuarterBeat()))/gameConfig.advanceSpawn
-    if (proportion > 0 && proportion <= 1) {
-      movesToDraw.push(move)
-    }
+    if ( beat >= songManager.getCurrentQuarterBeat() && beat <= songManager.getCurrentQuarterBeat() + gameConfig.advanceSpawn) movesToDraw.push(move)
+    if ( beat == songManager.getNearestBeat() && (move[2][0] === 'H' || move[3][0] === 'H')) holdsToDraw.push(move)
   })
   if (movesToDraw.length > 0) {
     movesToDraw.forEach((move) => {
@@ -25,6 +25,13 @@ function drawCues () {
       let size = gameConfig.cue.size * proportion
       if (rightHand !== 'X') drawCue(rightHand, size, cues)
       if (leftHand !== 'X') drawCue(leftHand, size, cues)
+    })
+  }
+  if (holdsToDraw.length > 0) {
+    holdsToDraw.forEach((move) => {
+      let beat = parseInt(move[0])
+      if (move[2][0] === 'H') drawHoldCues(beat, 'L', cues)
+      if (move[3][0] === 'H') drawHoldCues(beat, 'R', cues)
     })
   }
 }
