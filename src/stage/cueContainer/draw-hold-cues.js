@@ -11,8 +11,8 @@ function drawHoldCues (beat, hand, graphics) {
   let duration = (endBeat - startBeat) + 1
   let proportion = (duration-((startBeat + duration) - songManager.getCurrentQuarterBeat()))/duration
   let position = getHandMove(startBeat, hand)[1]
-  if (proportion > 0 && proportion <= 1) {
-    let radius = 2 * Math.PI * proportion
+  let radius = (2 * Math.PI * proportion) + (2 * Math.PI / duration)
+  if (radius > 0 && radius <= 2 * Math.PI) {
     graphics.lineStyle(gameConfig.cue.lineWidth, gameConfig.colors.hold, 1)
     graphics.arc(grid[position].x, grid[position].y, gameConfig.cue.size, 0, radius)
   }
