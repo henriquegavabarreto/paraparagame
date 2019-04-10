@@ -8,14 +8,12 @@ function adjustRate (event) {
       if ( v > 0.25 ) {
         v = v - 0.25
         player.setPlaybackRate(v)
-        document.getElementById('playback-rate').innerHTML = `Playback Rate: ${v}`
       }
     } else if ( event.key === editor.shortCuts.faster ) {
       let v = player.getPlaybackRate()
       if ( v < 2 ) {
         v = v + 0.25
         player.setPlaybackRate(v)
-        document.getElementById('playback-rate').innerHTML = `Playback Rate: ${v}`
       }
     }
   }
