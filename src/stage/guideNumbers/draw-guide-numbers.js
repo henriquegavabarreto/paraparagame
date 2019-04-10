@@ -17,11 +17,11 @@ function drawGuideNumbers () {
     if ( Math.abs(guideNumber % editor.adjustments.numbers) === 0) {
 
       var text = new PIXI.Text( guideNumber + 1, {
-          fontSize: 12,
+          fontSize: 14,
           fontFamily: 'Arial',
-          fill: '#000000',
+          fill: '#1ec503',
           align: 'center',
-          stroke: '#FFFFFF'
+          stroke: '#1ec503'
       })
 
       text.x = 195

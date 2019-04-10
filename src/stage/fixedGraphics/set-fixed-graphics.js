@@ -61,7 +61,7 @@ function setTimeText () {
 
 function setMenuButtons () {
   let menuHeight = gameConfig.height/20
-  
+
   let timeButton = PIXI.Sprite.fromImage('https://henriquegavabarreto.github.io/paraparagame/assets/timing.png')
   timeButton.x = gameConfig.width/2.35
   timeButton.y = menuHeight

@@ -3,8 +3,8 @@ import { backgroundChart, elements, circleSelection, guideNumbers, fixedGraphics
 var gameConfig = require('./game-config.js')
 
 var pixiConfig = {
-  transparent:false,
-  backgroundColor:0x888888 ,
+  transparent: false,
+  backgroundColor:0x000000 ,
   autoResize: true,
   resolution: 2,
   antialias: true,
