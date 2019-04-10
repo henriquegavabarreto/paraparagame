@@ -3,9 +3,8 @@ var editor = require('../../config/editor.js')
 var player = require('../../config/youtube.js')
 
 let timingModal = document.getElementById('timing-modal')
-let timingButton = document.getElementById('timing-button')
 
-function toggleModal() {
+function showTimingModal() {
   if (!editor.areaSelect) {
     if( player.getState() !== 'paused' ) {
       player.pause()
@@ -21,4 +20,4 @@ function toggleModal() {
   }
 }
 
-module.exports = timingButton.addEventListener('click', toggleModal)
+module.exports = showTimingModal

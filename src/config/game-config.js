@@ -1,5 +1,5 @@
 var gameConfig = {
-  width: 1280,
+  width: 640,
   height: 720,
   colors: {
     sharp: 0xff0659,
@@ -7,8 +7,8 @@ var gameConfig = {
     motion: 0xffd000
   },
   cue: {
-    size: 80,
-    lineWidth: 12
+    size: 55,
+    lineWidth: 10
   },
   advanceSpawn: 16
 }

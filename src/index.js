@@ -6,13 +6,10 @@ import { setBackgroundChart } from './stage/chart/set-background-chart.js'
 import { setSelectionCircles } from './stage/circleSelection/set-selection-circles.js'
 import { addCueGraphics } from './stage/cueContainer/add-cue-graphics.js'
 
-var showTimingOptions = require('./listeners/menus/show-timing-modal.js')
 import { saveTimingOptions } from './listeners/menus/save-timing-options.js'
 
-var showSongOptions = require('./listeners/menus/show-song-modal.js')
 import { saveSongOptions } from './listeners/menus/save-song-options.js'
 
-var showMenuOptions = require('./listeners/menus/show-menu-modal.js')
 import { saveMenuOptions } from './listeners/menus/save-menu-options.js'
 
 var saveDanceChartListener = require('./danceChart/save-dance-chart-to-database.js')
@@ -20,12 +17,7 @@ var saveDanceChartListener = require('./danceChart/save-dance-chart-to-database.
 var playShortCut = require('./listeners/player/shortcuts/play.js')
 var adjustPlaybackRate = require('./listeners/player/shortcuts/playback-rate.js')
 
-var slowerButton = require('./listeners/player/adjust-playback-rate.js').slower
-var fasterButton = require('./listeners/player/adjust-playback-rate.js').faster
-import playButton from './listeners/player/play.js'
 var onPaused = require('./listeners/player/on-pause.js')
-
-var seekInput = require('./listeners/player/seek-input.js')
 
 import { beatSelectors } from './listeners/shortcuts/beat-select.js'
 

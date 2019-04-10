@@ -3,9 +3,8 @@ var editor = require('../../config/editor.js')
 var player = require('../../config/youtube.js')
 
 let menuModal = document.getElementById('menu-modal')
-let menuButton = document.getElementById('menu-button')
 
-function toggleModal() {
+function showMenuModal() {
   if (!editor.areaSelect) {
     if( player.getState() !== 'paused' ) {
       player.pause()
@@ -17,4 +16,4 @@ function toggleModal() {
   }
 }
 
-module.exports = menuButton.addEventListener('click', toggleModal)
+module.exports = showMenuModal

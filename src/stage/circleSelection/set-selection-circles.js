@@ -4,11 +4,12 @@ import { grid } from '../../config/grid.js'
 import { addSelectionToArray } from '../../circles/add-selection-to-array.js'
 import { addSelectionToMove } from '../../circles/add-selection-to-move.js'
 var editor = require('../../config/editor.js')
+var gameConfig = require('../../config/game-config.js')
 
 function setSelectionCircles () {
   var circleConfig = {
-    size: 80,
-    lineWidth: 12,
+    size: gameConfig.cue.size,
+    lineWidth: gameConfig.cue.lineWidth,
     gridColor: 0xc0c0c0,
     gridAlpha: 0.4
   }

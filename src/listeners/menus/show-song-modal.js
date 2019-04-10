@@ -3,9 +3,8 @@ var editor = require('../../config/editor.js')
 var player = require('../../config/youtube.js')
 
 let songModal = document.getElementById('song-modal')
-let songButton = document.getElementById('song-options-button')
 
-function toggleModal() {
+function showSongModal() {
   if(!editor.areaSelect){
     if( player.getState() !== 'paused' ) {
       player.pause()
@@ -19,4 +18,4 @@ function toggleModal() {
   }
 }
 
-module.exports = songButton.addEventListener('click', toggleModal)
+module.exports = showSongModal

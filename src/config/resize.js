@@ -1,7 +1,7 @@
 import app from './pixi.js'
 
 function resize() {
-  let ratio = 1280 / 720
+  let ratio = 640 / 720
 
   if (window.innerWidth / window.innerHeight >= ratio) {
       var w = window.innerHeight * ratio

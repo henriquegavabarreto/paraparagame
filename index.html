@@ -9,88 +9,65 @@
 </head>
 <body>
   <div class="nav-wrapper">
-    <nav class="top-nav">
-      <!-- Timing Button and Options -->
-      <button type="button" class="top-button" id="timing-button">Timing</button>
-      <div class="timing-modal" id="timing-modal">
-        <div class="timing-content" id="timing-content">
-          <h2>Timing Options</h2>
-          <p id="invalid-timing-warning">Invalid Input - All must be numbers</p>
-          <label for="start">Video Starting Point: </label><input type="text" id="startingPoint"></input>
-          <br>
-          <label for="end">Video Ending Point: </label><input type="text" id="endingPoint"></input>
-          <br>
-          <label for="offset">Song Offset: </label><input type="text" id="offset">
-          <br>
-          <label for="bpm">Song BPM: </label><input type="text" id="bpm">
-          <br>
-          <button type="button" id="timing-submitter">Save</button>
-        </div>
+    <!-- Timing Button and Options -->
+    <div class="timing-modal" id="timing-modal">
+      <div class="timing-content" id="timing-content">
+        <h2>Timing Options</h2>
+        <p id="invalid-timing-warning">Invalid Input - All must be numbers</p>
+        <label for="start">Video Starting Point: </label><input type="text" id="startingPoint"></input>
+        <br>
+        <label for="end">Video Ending Point: </label><input type="text" id="endingPoint"></input>
+        <br>
+        <label for="offset">Song Offset: </label><input type="text" id="offset">
+        <br>
+        <label for="bpm">Song BPM: </label><input type="text" id="bpm">
+        <br>
+        <button type="button" id="timing-submitter">Save</button>
       </div>
-      <!-- Song Info Button and Options -->
-      <button type="button" class="top-button" id="song-options-button">Song Options</button>
-      <div class="song-modal" id="song-modal">
-        <div class="song-content" id="song-content">
-          <h2>Song Options</h2>
-          <p id="invalid-song-warning">Invalid Video ID</p>
-          <label for="title">Song Title: </label><input type="text" id="song-title"></input>
-          <br>
-          <label for="artist">Artist: </label><input type="text" id="song-artist"></input>
-          <br>
-          <label for="videoId">Youtube Video ID: </label><input type="text" id="video-id">
-          <br>
-          <button type="button" id="song-submitter">Save</button>
-        </div>
+    </div>
+    <!-- Song Info and Options -->
+    <div class="song-modal" id="song-modal">
+      <div class="song-content" id="song-content">
+        <h2>Song Options</h2>
+        <p id="invalid-song-warning">Invalid Video ID</p>
+        <label for="title">Song Title: </label><input type="text" id="song-title"></input>
+        <br>
+        <label for="artist">Artist: </label><input type="text" id="song-artist"></input>
+        <br>
+        <label for="videoId">Youtube Video ID: </label><input type="text" id="video-id">
+        <br>
+        <button type="button" id="song-submitter">Save</button>
       </div>
-      <!-- Menu Button and Options -->
-      <button type="button" class="top-button" id="menu-button">Menu</button>
-      <div class="menu-modal" id="menu-modal">
-        <div class="menu-content" id="menu-content">
-          <!-- <span class="close-button">&times;</span> -->
-          <h2>Main Menu</h2>
-          <div id="numbers">Show numbers every
-            <select name="numbers" id="guide-number-select">
-              <option value="4">4</option>
-              <option value="2">2</option>
-              <option value="1">1</option>
-            </select>
-             beats
-          </div>
-          <!-- <div>
-            <label for="cue-checkbox">Show cues: </label><input type="checkbox" id="cue-checkbox">
-          </div>
-          <div>
-            change short-cuts?
-          </div> -->
-          <div>
-            <button type="button" id="save-dance-chart">Save DanceChart</button>
-          </div>
-          <button type="button" id="save-menu-changes">OK</button>
+    </div>
+    <!-- Menu Button and Options -->
+    <div class="menu-modal" id="menu-modal">
+      <div class="menu-content" id="menu-content">
+        <!-- <span class="close-button">&times;</span> -->
+        <h2>Main Menu</h2>
+        <div id="numbers">Show numbers every
+          <select name="numbers" id="guide-number-select">
+            <option value="4">4</option>
+            <option value="2">2</option>
+            <option value="1">1</option>
+          </select>
+           beats
         </div>
+        <div>
+          <button type="button" id="save-dance-chart">Save DanceChart</button>
+        </div>
+        <button type="button" id="save-menu-changes">OK</button>
       </div>
-    </nav>
-    <nav class="side-nav">
+    </div>
+    <nav class="bottom-nav">
       <div class="hand-information">
         <p class="info-title">Left Hand</p>
         <div class="info-div">
-          <p id="left-hand-move-info"></p>
+          <p id="left-hand-move-info">no move</p>
         </div>
         <p class="info-title">Right Hand</p>
         <div class="info-div">
-          <p id="right-hand-move-info"></p>
+          <p id="right-hand-move-info">no move</p>
         </div>
-      </div>
-    </nav>
-    <nav class="bottom-nav">
-      <div class="seek">
-        <label for="seek">Seek to beat: </label>
-        <input type="text" id="beat-to-seek">
-      </div>
-      <button type="button" class="bottom-button" id="play-pause">Play/Pause</button>
-      <div class="playback">
-        <button type="button" class="bottom-button" id="slower">-</button>
-        <label for="playback-rate" id="playback-rate">Playback Rate</label>
-        <button type="button" class="bottom-button" id="faster">+</button>
       </div>
     </nav>
   </div>
