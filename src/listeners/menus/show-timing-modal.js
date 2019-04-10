@@ -12,10 +12,10 @@ function toggleModal() {
     }
 
     timingModal.classList.toggle("show-timing-options")
-    document.getElementById('startingPoint').value = danceChart.info.video.start
-    document.getElementById('endingPoint').value = danceChart.info.video.end
-    document.getElementById('offset').value = danceChart.info.song.offset
-    document.getElementById('bpm').value = danceChart.info.song.bpm
+    document.getElementById('startingPoint').value = danceChart.videoStart
+    document.getElementById('endingPoint').value = danceChart.videoEnd
+    document.getElementById('offset').value = danceChart.offset
+    document.getElementById('bpm').value = danceChart.bpm
 
     editor.status = false
   }

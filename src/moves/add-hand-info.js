@@ -49,7 +49,6 @@ function addHandInfo () {
 
   // check which hand on the current move is S
   // change it to be type S (sharp), H (hold) or M (motion)
-  // if it is S it doesnt need ending position or progress
   // calculation of duration will be done on the fly
   // if the move is X, it shouldn't be detected
   // S9 (sharp position 9)

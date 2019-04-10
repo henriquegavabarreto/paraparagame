@@ -2,11 +2,12 @@ var firebase = require('../config/firebase.js')
 var danceChart = require('../../data/dance-chart.js')
 var sortDanceChart = require('./sort-dance-chart.js')
 var getSaveTime = require('./get-save-time.js')
+var editor = require('../config/editor.js')
 
 var saveDanceChartButton = document.getElementById('save-dance-chart')
 
 function saveToDatabase () {
-  if (danceChart.info.song.title === '' || danceChart.info.song.artist === '' || danceChart.info.video.videoId === '' || danceChart.moves.length === 0) {
+  if (danceChart.title === '' || danceChart.artist === '' || danceChart.videoId === '' || danceChart.moves.length === 0) {
     alert('Error. \nMake sure you add a Song Title, Artist, videoId and any moves to the Dance Chart')
   } else {
     sortDanceChart()
@@ -18,22 +19,33 @@ function saveToDatabase () {
         let overwrite = confirm('There\'s already a dance chart to this video. Do you want to overwrite it?')
         if (overwrite){
           console.log('Overwrite chart')
-          var updates = {}
-          updates['/info/song'] = danceChart.info.song
-          updates['/info/video'] = danceChart.info.video
-          updates['/info/updatedAt'] = getSaveTime()
-          updates['/moves'] = danceChart.moves
-          ref.child(`${chartId}`).update(updates)
+          ref.child(`${chartId}`).update({ title: danceChart.title,
+            artist: danceChart.artist,
+            offset: danceChart.offset,
+            bpm: danceChart.bpm,
+            videoId: danceChart.videoId,
+            videoStart: danceChart.videoStart,
+            videoEnd: danceChart.videoEnd,
+            moves: danceChart.moves.join(' '),
+            updatedAt: getSaveTime()
+          })
           closeMenu()
         } else {
           console.log('Don\'t overwrite')
         }
       } else {
         console.log('Save unique chart')
-        let newChartData = danceChart
-        newChartData.info.createdAt = getSaveTime()
         // newChartData.info.author = userId(?)
-        ref.push(newChartData)
+        ref.push({ title: danceChart.title,
+          artist: danceChart.artist,
+          offset: danceChart.offset,
+          bpm: danceChart.bpm,
+          videoId: danceChart.videoId,
+          videoStart: danceChart.videoStart,
+          videoEnd: danceChart.videoEnd,
+          moves: danceChart.moves.join(' '),
+          createdAt: getSaveTime()
+        })
         closeMenu()
       }
     })
@@ -47,7 +59,7 @@ module.exports = saveDanceChartListener
 function getChartId (charts) {
   let id = -1
   for(var chartId in charts) {
-    if(charts[chartId].info.video.videoId === danceChart.info.video.videoId) { // TODO: Should check if danceChart.info.author is the user
+    if(charts[chartId].videoId === danceChart.videoId) { // TODO: Should check if danceChart.info.author is the user
       id = chartId
       break
     }
@@ -57,4 +69,5 @@ function getChartId (charts) {
 
 function closeMenu () {
   document.getElementById('menu-modal').classList.toggle("show-menu-options")
+  editor.status = true
 }

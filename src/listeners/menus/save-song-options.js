@@ -20,7 +20,7 @@ function saveOptions () {
 function validateSong (titleInput, artistInput, videoIdInput) {
   if (videoIdInput.length === 11 || videoIdInput.length === 0) { // This should check if the ID is valid on the API, though
 
-    if (videoIdInput !== danceChart.info.video.videoId && videoIdInput.length !== 0) {
+    if (videoIdInput !== danceChart.videoId && videoIdInput.length !== 0) {
       resetDanceChart()
       player.load(videoIdInput)
       player.play()
@@ -33,18 +33,15 @@ function validateSong (titleInput, artistInput, videoIdInput) {
 
     }
 
-    danceChart.info.song.title = titleInput
-    danceChart.info.song.artist = artistInput
-    danceChart.info.video.videoId = videoIdInput
+    danceChart.title = titleInput
+    danceChart.artist = artistInput
+    danceChart.videoId = videoIdInput
 
     document.getElementById('invalid-song-warning').style.display = 'none'
 
     songModal.classList.toggle("show-song-options")
 
     editor.status = true
-
-    console.log(danceChart)
-
   } else {
     document.getElementById('invalid-song-warning').style.display = 'block'
   }

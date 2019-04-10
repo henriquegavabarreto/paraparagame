@@ -4,6 +4,7 @@ var songManager = require('../../config/song-manager.js')
 var beatArray = require('../../config/beat-array.js')
 var showMoveInfo = require('../../moves/show-move-info.js')
 import { createNote } from '../../stage/elements/create-note.js'
+import drawCues from '../../stage/cueContainer/draw-cues.js'
 
 // seek takes some time to take effect for some reason. setTimeout is here to give the desired effect of note creation
 
@@ -13,22 +14,34 @@ function beatSelect (event) {
       let skippedBeats = 1
       player.seek(songManager.getNearestBeatTime(skippedBeats))
       createNoteWhenSelected(skippedBeats)
-      setTimeout(showMoveInfo, 150)
+      setTimeout(function () {
+        showMoveInfo()
+        drawCues()
+      }, 150)
     } else if ( event.key === editor.shortCuts.previousQuarterBeat ) {
       let skippedBeats = -1
       player.seek(songManager.getNearestBeatTime(skippedBeats))
       createNoteWhenSelected(skippedBeats)
-      setTimeout(showMoveInfo, 150)
+      setTimeout(function () {
+        showMoveInfo()
+        drawCues()
+      }, 150)
     } else if ( event.key === editor.shortCuts.nextBeat ) {
       let skippedBeats = 4
       player.seek(songManager.getNearestBeatTime(skippedBeats))
       createNoteWhenSelected(skippedBeats)
-      setTimeout(showMoveInfo, 150)
+      setTimeout(function () {
+        showMoveInfo()
+        drawCues()
+      }, 150)
     } else if ( event.key === editor.shortCuts.previousBeat ) {
       let skippedBeats = -4
       player.seek(songManager.getNearestBeatTime(skippedBeats))
       createNoteWhenSelected(skippedBeats)
-      setTimeout(showMoveInfo, 150)
+      setTimeout(function () {
+        showMoveInfo()
+        drawCues()
+      }, 150)
     }
   }
 }
