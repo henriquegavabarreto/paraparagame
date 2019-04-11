@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="src/css/style.css">
 </head>
 <body>
-  <div class="nav-wrapper">
+  <div class="modals">
     <!-- Timing Button and Options -->
     <div class="timing-modal" id="timing-modal">
       <div class="timing-content" id="timing-content">
@@ -58,6 +58,8 @@
         <button type="button" id="save-menu-changes">OK</button>
       </div>
     </div>
+  </div>
+  <div id="editor">
     <nav class="bottom-nav">
       <div class="hand-information">
         <p class="info-title">Left Hand</p>
@@ -70,9 +72,9 @@
         </div>
       </div>
     </nav>
+    <div id="canvas" tabindex="0"></div>
+    <div id="player"></div>
   </div>
-  <div id="canvas"></div>
-  <div id="player"></div>
   <script src="dist/main.js" charset="utf-8"></script>
 </body>
 </html>

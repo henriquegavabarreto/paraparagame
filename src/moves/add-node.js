@@ -19,7 +19,7 @@ function addNode (event) {
   }
 }
 
-var addNodeListener = window.addEventListener('keydown', addNode)
+var addNodeListener = document.getElementById('canvas').addEventListener('keydown', addNode)
 
 function setHoldNode() {
   let startBeat = getStartBeat(songManager.getNearestBeat(), editor.selectedHand)

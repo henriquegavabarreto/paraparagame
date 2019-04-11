@@ -19,4 +19,4 @@ function play (event) {
   }
 }
 
-export default window.addEventListener('keydown', play)
+export default document.getElementById('canvas').addEventListener('keydown', play)

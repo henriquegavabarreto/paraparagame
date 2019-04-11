@@ -19,4 +19,4 @@ function adjustRate (event) {
   }
 }
 
-module.exports = window.addEventListener('keydown', adjustRate)
+module.exports = document.getElementById('canvas').addEventListener('keydown', adjustRate)

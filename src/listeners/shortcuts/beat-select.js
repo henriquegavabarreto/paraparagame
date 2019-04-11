@@ -46,7 +46,7 @@ function beatSelect (event) {
   }
 }
 
-var beatSelectors = window.addEventListener('keydown', beatSelect)
+var beatSelectors = document.getElementById('canvas').addEventListener('keydown', beatSelect)
 
 export { beatSelectors }
 

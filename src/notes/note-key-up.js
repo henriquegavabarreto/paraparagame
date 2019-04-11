@@ -42,7 +42,7 @@ function stopNoteCreation (event) {
   }
 }
 
-var noteKeyUp = window.addEventListener('keyup', stopNoteCreation)
+var noteKeyUp = document.getElementById('canvas').addEventListener('keyup', stopNoteCreation)
 
 export { noteKeyUp }
 

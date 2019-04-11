@@ -25,6 +25,6 @@ function startNoteCreation (event) {
   }
 }
 
-var noteKeyDown = window.addEventListener('keydown', startNoteCreation)
+var noteKeyDown = document.getElementById('canvas').addEventListener('keydown', startNoteCreation)
 
 export { noteKeyDown }

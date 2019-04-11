@@ -26,7 +26,7 @@ function deleteNote (event) {
   }
 }
 
-var deleteMove = window.addEventListener('keydown', deleteNote)
+var deleteMove = document.getElementById('canvas').addEventListener('keydown', deleteNote)
 
 export { deleteMove }
 
