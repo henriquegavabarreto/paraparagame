@@ -106,6 +106,7 @@ body {
   padding: 1rem 1.5rem;
   width: 24rem;
   border-radius: 0.5rem;
+  outline: none;
 }
 
 .show-timing-options, .show-song-options, .show-menu-options {

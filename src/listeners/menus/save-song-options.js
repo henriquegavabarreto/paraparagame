@@ -49,4 +49,10 @@ function validateSong (titleInput, artistInput, videoIdInput) {
 
 const saveSongOptions = saveSongButton.addEventListener('click', saveOptions)
 
-export { saveSongOptions }
+const saveSongOnEnter = document.getElementById('song-content').addEventListener('keydown', function (event) {
+  if ( event.key === 'Enter') {
+    saveOptions()
+  }
+})
+
+export { saveSongOptions, saveSongOnEnter }

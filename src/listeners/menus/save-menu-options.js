@@ -21,4 +21,10 @@ function saveChanges () {
 
 const saveMenuOptions = saveMenuButton.addEventListener('click', saveChanges)
 
-export { saveMenuOptions }
+const saveMenuOnEnter = document.getElementById('menu-content').addEventListener('keydown', function (event) {
+  if ( event.key === 'Enter') {
+    saveChanges()
+  }
+})
+
+export { saveMenuOptions , saveMenuOnEnter}

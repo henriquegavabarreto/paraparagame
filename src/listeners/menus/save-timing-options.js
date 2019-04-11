@@ -52,5 +52,10 @@ function validateTiming (startInput, endInput, offsetInput, bpmInput) {
 
 const saveTimingOptions = saveTimingButton.addEventListener('click', saveOptions)
 
+const saveTimingOnEnter = document.getElementById('timing-content').addEventListener('keydown', function (event) {
+  if ( event.key === 'Enter') {
+    saveOptions()
+  }
+})
 
-export { saveTimingOptions }
+export { saveTimingOptions, saveTimingOnEnter }

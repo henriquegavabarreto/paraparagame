@@ -7,10 +7,13 @@ import { setSelectionCircles } from './stage/circleSelection/set-selection-circl
 import { addCueGraphics } from './stage/cueContainer/add-cue-graphics.js'
 
 import { saveTimingOptions } from './listeners/menus/save-timing-options.js'
+import { saveTimingOnEnter } from './listeners/menus/save-timing-options.js'
 
 import { saveSongOptions } from './listeners/menus/save-song-options.js'
+import { saveSongOnEnter } from './listeners/menus/save-song-options.js'
 
 import { saveMenuOptions } from './listeners/menus/save-menu-options.js'
+import { saveMenuOnEnter } from './listeners/menus/save-menu-options.js'
 
 var saveDanceChartListener = require('./danceChart/save-dance-chart-to-database.js')
 
