@@ -1,5 +1,5 @@
 var player = require('./youtube.js')
-var offset = require('../../data/dance-chart.js').offset
+var danceChart = require('../../data/dance-chart.js')
 var bpm = require('../../data/dance-chart.js').bpm
 
 function getTempo () {
@@ -8,7 +8,7 @@ function getTempo () {
 }
 
 function getCurrentBeat () {
-  let currentBeat = (player.getCurrentTime() - offset) / getTempo()
+  let currentBeat = (player.getCurrentTime() - danceChart.offset) / getTempo()
   return currentBeat
 }
 
@@ -27,12 +27,12 @@ function getNearestBeat () {
 }
 
 function getNearestBeatTime (t = 0) {
-  let nearestBeatTime = (( (getNearestBeat() + t) / 4 ) * getTempo()) + offset
+  let nearestBeatTime = (( (getNearestBeat() + t) / 4 ) * getTempo()) + danceChart.offset
   return nearestBeatTime
 }
 
 function getBeatTime(beat) {
-  let beatTime = (( beat / 4 ) * getTempo()) + offset
+  let beatTime = (( beat / 4 ) * getTempo()) + danceChart.offset
   return beatTime
 }
 
