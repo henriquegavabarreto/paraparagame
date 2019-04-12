@@ -20,6 +20,8 @@ Rhythm dance game based on the japanese ParaPara dance using pixi.js, posenet an
 * s - create a node for right moves (Hold and Motion)
 * q - delete left hand move
 * w - delete right hand move
+* c - copy
+* v - paste
 * p - play / pause video
 * , - decrease playback rate
 * . - increase playback rate
