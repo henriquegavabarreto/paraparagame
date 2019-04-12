@@ -3,6 +3,7 @@ var editorConfig = {
   areaSelect: false,
   creatingMove: false,
   changingMove: false,
+  selectingMoves: false,
   shortCuts: {
     play: 'p',
     slower: ',',
@@ -12,7 +13,9 @@ var editorConfig = {
     nextBeat: 'ArrowRight',
     previousBeat: 'ArrowLeft',
     leftHand: 'z',
-    rightHand: 'x'
+    rightHand: 'x',
+    copy: 'c',
+    paste: 'v'
   },
   keyStatus: {
     zPressed: false,
@@ -21,6 +24,8 @@ var editorConfig = {
   beatArray: [],
   selectedCircles: [],
   selectedHand: '',
+  copySelection: [],
+  clipboard: [],
   adjustments: {
     numbers: 4
   }

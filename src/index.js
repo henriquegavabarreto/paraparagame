@@ -31,6 +31,11 @@ import { deleteMove } from './moves/delete-move.js'
 
 import { addNodeListener } from './moves/add-node.js'
 
+import { copyKeyDown } from './moves/copy-key-down.js'
+import { copyKeyUp } from './moves/copy-key-up.js'
+
+import { pasteKeyDown } from './moves/paste-key-down.js'
+
 setFixedGraphics()
 
 setBackgroundChart()

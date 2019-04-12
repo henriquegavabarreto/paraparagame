@@ -1,5 +1,5 @@
 import * as PIXI from 'pixi.js'
-import { backgroundChart, elements, circleSelection, guideNumbers, fixedGraphics, cueContainer } from './containers.js'
+import { backgroundChart, elements, circleSelection, guideNumbers, fixedGraphics, cueContainer, copyPasteSelection } from './containers.js'
 var gameConfig = require('./game-config.js')
 
 var pixiConfig = {
@@ -24,6 +24,7 @@ export default app
 function setContainers () {
   app.stage.addChild(backgroundChart)
   app.stage.addChild(elements)
+  app.stage.addChild(copyPasteSelection)
   app.stage.addChild(fixedGraphics)
   app.stage.addChild(circleSelection)
   app.stage.addChild(cueContainer)
