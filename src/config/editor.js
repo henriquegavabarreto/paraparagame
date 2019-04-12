@@ -24,6 +24,7 @@ var editorConfig = {
   selectedCircles: [],
   selectedHand: '',
   copySelection: [],
+  clipboard: [],
   adjustments: {
     numbers: 4
   }
