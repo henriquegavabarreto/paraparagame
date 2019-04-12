@@ -24,7 +24,7 @@ function addSelectionToArray (circle) {
     setTimeout(function () {
       showMoveInfo()
       drawCues()
-    }, 150)
+    }, 200)
   }
 }
 

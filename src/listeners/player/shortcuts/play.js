@@ -11,7 +11,7 @@ function play (event) {
         setTimeout(function () {
           showMoveInfo()
           drawCues()
-        }, 150)
+        }, 200)
       } else {
         player.play()
       }

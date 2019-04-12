@@ -2,7 +2,7 @@ var danceChart = {
   title: "",
   artist: "",
   offset: 0,
-  bpm: 150,
+  bpm: 200,
   videoId: "",
   videoStart: 0,
   videoEnd: 0,
