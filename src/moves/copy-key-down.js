@@ -1,6 +1,7 @@
 var songManager = require('../config/song-manager.js')
 var editor = require('../config/editor.js')
 var player = require('../config/youtube.js')
+import { drawSelectionRectangle } from '../stage/copyPasteSelection/draw-selection-rectangle.js'
 
 function getFirstBeat (event) {
   if ( editor.status && player.getState() === 'paused' && !editor.areaSelect ) {
@@ -8,10 +9,11 @@ function getFirstBeat (event) {
       editor.copySelection = []
       editor.clipboard = []
       editor.copySelection.push(songManager.getNearestBeat())
+      drawSelectionRectangle()
     }
   }
 }
 
 var copyKeyDown = document.getElementById('canvas').addEventListener('keydown', getFirstBeat)
 
-module.exports = copyKeyDown
+export { copyKeyDown }

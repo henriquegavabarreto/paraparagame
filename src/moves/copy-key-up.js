@@ -2,6 +2,7 @@ var songManager = require('../config/song-manager.js')
 var editor = require('../config/editor.js')
 var player = require('../config/youtube.js')
 var danceChart = require('../../data/dance-chart.js')
+import { copyPasteSelection } from '../config/containers.js'
 
 function getLastBeat (event) {
   if ( editor.status && player.getState() === 'paused' && !editor.areaSelect ) {
@@ -13,10 +14,11 @@ function getLastBeat (event) {
         let beat = parseInt(splitMove[0])
         if (beat >= editor.copySelection[0] && beat <= editor.copySelection[1]) editor.clipboard.push(move)
       })
+      copyPasteSelection.removeChildren()
     }
   }
 }
 
 var copyKeyUp = document.getElementById('canvas').addEventListener('keyup', getLastBeat)
 
-module.exports = copyKeyUp
+export { copyKeyUp }
