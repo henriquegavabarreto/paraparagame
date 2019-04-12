@@ -31,6 +31,9 @@ import { deleteMove } from './moves/delete-move.js'
 
 import { addNodeListener } from './moves/add-node.js'
 
+var copyKeyDown = require('./moves/copy-key-down.js')
+var copyKeyUp = require('./moves/copy-key-up.js')
+
 setFixedGraphics()
 
 setBackgroundChart()

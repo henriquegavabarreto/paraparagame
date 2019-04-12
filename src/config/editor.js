@@ -12,7 +12,9 @@ var editorConfig = {
     nextBeat: 'ArrowRight',
     previousBeat: 'ArrowLeft',
     leftHand: 'z',
-    rightHand: 'x'
+    rightHand: 'x',
+    copy: 'c',
+    paste: 'v'
   },
   keyStatus: {
     zPressed: false,
@@ -21,6 +23,7 @@ var editorConfig = {
   beatArray: [],
   selectedCircles: [],
   selectedHand: '',
+  copySelection: [],
   adjustments: {
     numbers: 4
   }

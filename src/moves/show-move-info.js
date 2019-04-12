@@ -34,34 +34,4 @@ function setHandInformation (handMove, element) {
   }
 }
 
-// function changeMoveInfoText (handMove, handTypeInfo, handPositionInfo) {
-//   if(handMove === 'X') {
-//     handTypeInfo.innerHTML = 'No Type'
-//     handPositionInfo.innerHTML = 'No Position'
-//   } else {
-//     if(handMove[0] === 'S') {
-//       handTypeInfo.innerHTML = 'Type: Sharp'
-//       handPositionInfo.innerHTML = `Position: ${handMove[1]}`
-//     } else if (handMove[0] === 'H') {
-//       if(handMove[2] === 'S') {
-//         handTypeInfo.innerHTML = 'Type: Hold Start'
-//       } else if (handMove[1] === 'P') {
-//         handTypeInfo.innerHTML = 'Type: Hold in Progress'
-//       } else {
-//         handTypeInfo.innerHTML = 'Type: Hold End'
-//       }
-//       handPositionInfo.innerHTML = `Position: ${handMove[1]}`
-//     } else {
-//       if(handMove[2] === 'S') {
-//         handTypeInfo.innerHTML = 'Type: Motion Start'
-//       } else if (handMove[2] === 'P') {
-//         handTypeInfo.innerHTML = 'Type: Motion in Progress'
-//       } else {
-//         handTypeInfo.innerHTML = 'Type: Motion End'
-//       }
-//       handPositionInfo.innerHTML = `Position: ${handMove[1]}`
-//     }
-//   }
-// }
-
 module.exports = showMoveInfo
