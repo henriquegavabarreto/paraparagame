@@ -15,6 +15,7 @@ function getLastBeat (event) {
         if (beat >= editor.copySelection[0] && beat <= editor.copySelection[1]) editor.clipboard.push(move)
       })
       copyPasteSelection.removeChildren()
+      editor.selectingMoves = false
     }
   }
 }

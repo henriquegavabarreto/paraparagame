@@ -6,6 +6,7 @@ import { drawSelectionRectangle } from '../stage/copyPasteSelection/draw-selecti
 function getFirstBeat (event) {
   if ( editor.status && player.getState() === 'paused' && !editor.areaSelect ) {
     if ( event.key === editor.shortCuts.copy && event.repeat === false ) {
+      editor.selectingMoves = true
       editor.copySelection = []
       editor.clipboard = []
       editor.copySelection.push(songManager.getNearestBeat())

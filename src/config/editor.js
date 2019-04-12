@@ -3,6 +3,7 @@ var editorConfig = {
   areaSelect: false,
   creatingMove: false,
   changingMove: false,
+  selectingMoves: false,
   shortCuts: {
     play: 'p',
     slower: ',',
