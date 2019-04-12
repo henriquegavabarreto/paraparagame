@@ -23,7 +23,7 @@ function addSelectionToMove (position) {
   setTimeout(function () {
     showMoveInfo()
     drawCues()
-  }, 150)
+  }, 200)
 }
 
 export { addSelectionToMove }

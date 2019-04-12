@@ -19,7 +19,7 @@ function beatSelect (event) {
         showMoveInfo()
         drawCues()
         if (editor.selectingMoves) drawSelectionRectangle()
-      }, 150)
+      }, 200)
     } else if ( event.key === editor.shortCuts.previousQuarterBeat ) {
       let skippedBeats = -1
       player.seek(songManager.getNearestBeatTime(skippedBeats))
@@ -28,7 +28,7 @@ function beatSelect (event) {
         showMoveInfo()
         drawCues()
         if (editor.selectingMoves) drawSelectionRectangle()
-      }, 150)
+      }, 200)
     } else if ( event.key === editor.shortCuts.nextBeat ) {
       let skippedBeats = 4
       player.seek(songManager.getNearestBeatTime(skippedBeats))
@@ -37,7 +37,7 @@ function beatSelect (event) {
         showMoveInfo()
         drawCues()
         if (editor.selectingMoves) drawSelectionRectangle()
-      }, 150)
+      }, 200)
     } else if ( event.key === editor.shortCuts.previousBeat ) {
       let skippedBeats = -4
       player.seek(songManager.getNearestBeatTime(skippedBeats))
@@ -46,7 +46,7 @@ function beatSelect (event) {
         showMoveInfo()
         drawCues()
         if (editor.selectingMoves) drawSelectionRectangle()
-      }, 150)
+      }, 200)
     }
   }
 }
@@ -62,14 +62,14 @@ function createNoteWhenSelected (beats) {
       setTimeout(function () {
         createNote()
         beatArray.add()
-      }, 150)
+      }, 200)
     } else if (beats === 4) {
       for(let i = 0; i <= 3; i++) { // adds notes in between
         setTimeout(function () {
           let beatToAdd = songManager.getNearestBeat() - i
           createNote(pressedKey, beatToAdd)
           beatArray.add(beatToAdd)
-        }, 150)
+        }, 200)
       }
     } else if (beats === -4) {
       for(let i = 0; i <= 3; i++) {
@@ -77,7 +77,7 @@ function createNoteWhenSelected (beats) {
           let beatToAdd = songManager.getNearestBeat() + i
           createNote(pressedKey, beatToAdd)
           beatArray.add(beatToAdd)
-        }, 150)
+        }, 200)
       }
     }
   }

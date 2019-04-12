@@ -11,12 +11,13 @@ function redrawStaff () {
   var videoStart = 0
   var videoEnd = player.getDuration()
 
-  for( let i = videoStart; i <= videoEnd + songManager.getTempo(); i += songManager.getTempo() ) {
-    let guideNumber = Math.round( ( i - danceChart.offset ) / songManager.getTempo() )
+  var firstNumber = Math.round( ( videoStart - danceChart.offset ) / songManager.getTempo() )
+  var lastNumber = Math.round( ( videoEnd - danceChart.offset ) / songManager.getTempo() )
 
+  for( let i = firstNumber; i <= lastNumber; i += 1 ) {
     let staff = new PIXI.Sprite.fromImage('https://henriquegavabarreto.github.io/paraparagame/assets/staff.png')
     staff.x = 20
-    staff.y = 56 * guideNumber
+    staff.y = 56 * i
     staff.scale.x = 0.9
     backgroundChart.addChild(staff)
   }
