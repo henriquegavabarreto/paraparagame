@@ -5,6 +5,7 @@ function enableCircleClick () {
   editor.areaSelect = true
   circleSelection.children.forEach(circle => {
     circle.interactive = true
+    circle.buttonMode = true
   })
 }
 

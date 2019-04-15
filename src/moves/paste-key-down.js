@@ -7,7 +7,7 @@ import { redrawNotes } from '../stage/elements/redraw-notes.js'
 
 function getFirstBeat (event) {
   if ( editor.status && player.getState() === 'paused' && !editor.areaSelect ) {
-    if ( event.key === editor.shortCuts.paste && event.repeat === false ) {
+    if ( event.key === editor.shortCuts.paste ) {
       let addMoves = true
       let movesToAdd = []
       for(let move of editor.clipboard) {
@@ -32,6 +32,6 @@ function getFirstBeat (event) {
   }
 }
 
-var pasteKeyDown = document.getElementById('canvas').addEventListener('keydown', getFirstBeat)
+var pasteKeyDown = document.getElementById('canvas').addEventListener('keyup', getFirstBeat)
 
 export { pasteKeyDown }

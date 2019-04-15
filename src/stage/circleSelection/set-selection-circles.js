@@ -18,7 +18,7 @@ function setSelectionCircles () {
     let circle = new PIXI.Graphics()
     circle.lineStyle(circleConfig.lineWidth, circleConfig.gridColor, circleConfig.gridAlpha)
     circle.drawCircle(grid[i].x, grid[i].y, circleConfig.size)
-    circle.buttonMode = true
+    circle.cacheAsBitmap = true
     circle.name = `${i}`
 
     circle.on('mouseover', (event) => {
