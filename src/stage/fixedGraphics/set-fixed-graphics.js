@@ -37,8 +37,6 @@ function setVideoText () {
   videoText.y = gameConfig.height/6
   videoText.name = 'videoText'
 
-  videoText.cacheAsBitmap = true
-
   fixedGraphics.addChild(videoText)
 }
 
