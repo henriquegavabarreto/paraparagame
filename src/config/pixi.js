@@ -15,18 +15,4 @@ var pixiConfig = {
 
 var app = new PIXI.Application(pixiConfig)
 
-document.getElementById("canvas").appendChild(app.view)
-
-setContainers()
-
 export default app
-
-function setContainers () {
-  app.stage.addChild(backgroundChart)
-  app.stage.addChild(elements)
-  app.stage.addChild(copyPasteSelection)
-  app.stage.addChild(fixedGraphics)
-  app.stage.addChild(circleSelection)
-  app.stage.addChild(cueContainer)
-  app.stage.addChild(guideNumbers)
-}

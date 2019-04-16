@@ -1,5 +1,6 @@
 var firebase = require('./config/firebase.js')
 import app from './config/pixi.js'
+import setEditorViewAndContainers from './stage/set-editor-view-and-containers.js'
 import resizeListener from './config/resize.js'
 import { setFixedGraphics } from './stage/fixedGraphics/set-fixed-graphics.js'
 import { setBackgroundChart } from './stage/chart/set-background-chart.js'
@@ -35,6 +36,8 @@ import { copyKeyDown } from './moves/copy-key-down.js'
 import { copyKeyUp } from './moves/copy-key-up.js'
 
 import { pasteKeyDown } from './moves/paste-key-down.js'
+
+setEditorViewAndContainers()
 
 setFixedGraphics()
 
